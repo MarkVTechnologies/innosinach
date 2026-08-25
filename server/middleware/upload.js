@@ -4,7 +4,7 @@ const multer = require("multer");
 const { Readable } = require("stream");
 const cloudinary = require("../config/cloudinary");
 
-const ALLOWED = new Set(["image/jpeg", "image/png", "image/webp", "image/gif"]);
+const ALLOWED = new Set(["image/jpeg", "image/png", "image/webp", "image/gif", "image/svg+xml"]);
 const MAX = parseInt(process.env.MAX_FILE_SIZE) || 5 * 1024 * 1024;
 const VALID_FOLDERS = ["lands", "houses", "blog", "general", "logos"];
 const FOLDER_PREFIX = process.env.CLOUDINARY_FOLDER_PREFIX || "naijarealty";
@@ -12,7 +12,7 @@ const FOLDER_PREFIX = process.env.CLOUDINARY_FOLDER_PREFIX || "naijarealty";
 function fileFilter(req, file, cb) {
   ALLOWED.has(file.mimetype)
     ? cb(null, true)
-    : cb(new Error("Only JPEG, PNG, WebP, and GIF images are allowed"));
+    : cb(new Error("Only JPEG, PNG, WebP, GIF, and SVG images are allowed"));
 }
 
 const upload = multer({

@@ -105,9 +105,18 @@ const authLimiter = rateLimit({
 app.use(generalLimiter);
 
 // ── Health ────────────────────────────────────────────────────────
+// Kept ahead of the DB-connect gate so it stays responsive independent of Mongo.
 app.get("/health", (req, res) =>
   res.json({ status: "ok", ts: new Date().toISOString() }),
 );
+
+// ── DB connect gate ───────────────────────────────────────────────
+// Awaits (and caches) the Mongo connection before any DB-backed route runs.
+// Without this, a cold serverless start races mongoose's buffering timeout
+// (10s) instead of surfacing a clean error or reusing a warm connection.
+app.use((req, res, next) => {
+  connectDB().then(() => next()).catch(next);
+});
 
 // ── Setup (first-run) — no auth required, anyone can call on fresh install ──
 app.get("/setup", authLimiter, authCtrl.setupStatus);

@@ -779,7 +779,7 @@ function FaviconUpload({ value, onChange }) {
         >
           Shown in browser tabs and bookmarks.
           <br />
-          PNG (32�332 or 64�364), ICO, or SVG. Max 5MB.
+          PNG (32×32 or 64×64), ICO, or SVG. Max 5MB.
         </p>
       </div>
     </div>
