@@ -30,7 +30,7 @@ const PORT = process.env.PORT || 5000;
 app.set("trust proxy", 1);
 
 // ── Connect DB ────────────────────────────────────────────────────
-connectDB();
+connectDB().catch((err) => console.error("[DB] Startup connection error:", err.message));
 
 // ── Security ──────────────────────────────────────────────────────
 app.use(helmet({ crossOriginResourcePolicy: { policy: "cross-origin" } }));
@@ -166,11 +166,13 @@ app.use((err, req, res, next) => {
   });
 });
 
-// ── Start ─────────────────────────────────────────────────────────
-app.listen(PORT, () => {
-  console.log(`\n🚀 NaijaRealty API running on port ${PORT}`);
-  console.log(`   Environment: ${process.env.NODE_ENV || "development"}`);
-  console.log(`   Health:      http://localhost:${PORT}/health\n`);
-});
+// ── Start (skip when running as a Vercel serverless function) ──────
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`\n🚀 NaijaRealty API running on port ${PORT}`);
+    console.log(`   Environment: ${process.env.NODE_ENV || "development"}`);
+    console.log(`   Health:      http://localhost:${PORT}/health\n`);
+  });
+}
 
 module.exports = app;
