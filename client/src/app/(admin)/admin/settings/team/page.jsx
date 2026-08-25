@@ -939,11 +939,11 @@ export default function TeamPage() {
             style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}
           >
             {members.map((member) => {
-              const isSelf = member.id === currentUser?.id;
+              const isSelf = String(member._id) === String(currentUser?._id);
               const isInactive = !member.is_active;
               return (
                 <div
-                  key={member.id}
+                  key={member._id}
                   style={{
                     display: "flex",
                     alignItems: "center",
@@ -1212,9 +1212,9 @@ export default function TeamPage() {
               email: modal.member.email,
               role: modal.member.role,
             }}
-            onSave={(data) => handleUpdate(modal.member.id, data)}
+            onSave={(data) => handleUpdate(modal.member._id, data)}
             onClose={() => setModal(null)}
-            isSelf={modal.member.id === currentUser?.id}
+            isSelf={String(modal.member._id) === String(currentUser?._id)}
           />
         </Modal>
       )}
@@ -1225,7 +1225,7 @@ export default function TeamPage() {
         >
           <ChangePasswordForm
             member={modal.member}
-            isSelf={modal.member.id === currentUser?.id}
+            isSelf={String(modal.member._id) === String(currentUser?._id)}
             onClose={() => setModal(null)}
           />
         </Modal>
