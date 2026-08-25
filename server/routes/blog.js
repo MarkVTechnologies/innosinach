@@ -188,6 +188,9 @@ router.post(
         body.published_at = new Date();
       }
 
+      body.author = req.admin._id;
+      body.author_name = req.admin.name;
+
       const post = await BlogPost.create(body);
 
       // ── Revalidate when published ──────────────────────────────
