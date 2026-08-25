@@ -47,13 +47,18 @@ export async function POST(request) {
     }
 
     // ── Revalidate each path ──────────────────────────────────────
+    // A path entry may be a plain string (page-level revalidation) or
+    // { path, type: "layout" } to invalidate every route sharing that layout —
+    // used for settings like the site logo/nav that render on every page.
     const revalidated = [];
     const errors = [];
 
-    for (const path of paths) {
+    for (const entry of paths) {
+      const path = typeof entry === "string" ? entry : entry.path;
+      const type = typeof entry === "string" ? undefined : entry.type;
       try {
-        revalidatePath(path);
-        revalidated.push(path);
+        revalidatePath(path, type);
+        revalidated.push(type ? `${path} (${type})` : path);
       } catch (err) {
         errors.push({ path, error: err.message });
       }

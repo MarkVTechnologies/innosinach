@@ -275,6 +275,12 @@ router.put("/admin/settings", requireAuth, async (req, res, next) => {
       ),
     );
     await Promise.all(ops);
+
+    // Settings (logo, site name, nav links...) render in the shared public
+    // layout — revalidate it as a layout so every route picks up the change,
+    // not just "/".
+    revalidate([{ path: "/", type: "layout" }]);
+
     return ok(res, null, "Settings saved");
   } catch (err) {
     next(err);
