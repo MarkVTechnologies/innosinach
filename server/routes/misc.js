@@ -536,7 +536,10 @@ router.get("/search", async (req, res, next) => {
 // GET /admin/team
 router.get("/admin/team", requireAuth, async (req, res, next) => {
   try {
-    const members = await Admin.find({}).sort({ createdAt: 1 }).lean();
+    const members = await Admin.find({})
+      .select("-password")
+      .sort({ createdAt: 1 })
+      .lean();
     return ok(res, members);
   } catch (err) {
     next(err);
@@ -546,7 +549,7 @@ router.get("/admin/team", requireAuth, async (req, res, next) => {
 // GET /admin/team/:id
 router.get("/admin/team/:id", requireAuth, async (req, res, next) => {
   try {
-    const member = await Admin.findById(req.params.id).lean();
+    const member = await Admin.findById(req.params.id).select("-password").lean();
     if (!member) return fail(res, "Team member not found", 404);
     return ok(res, member);
   } catch (err) {
@@ -614,7 +617,9 @@ router.put("/admin/team/:id", requireAuth, async (req, res, next) => {
     const member = await Admin.findByIdAndUpdate(req.params.id, update, {
       new: true,
       runValidators: true,
-    }).lean();
+    })
+      .select("-password")
+      .lean();
     if (!member) return fail(res, "Team member not found", 404);
     return ok(res, member, "Updated");
   } catch (err) {
