@@ -30,7 +30,9 @@ exports.login = async (req, res, next) => {
     const token = signToken(admin);
     return ok(res, {
       token,
-      user: { id: admin._id, name: admin.name, email: admin.email, role: admin.role },
+      // Shape matches GET /auth/me (_id, not id) so the client's cached
+      // user object is consistent whether it came from login or a refresh.
+      user: { _id: admin._id, name: admin.name, email: admin.email, role: admin.role },
     }, "Login successful");
   } catch (err) { next(err); }
 };
