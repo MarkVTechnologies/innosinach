@@ -2330,8 +2330,8 @@ export default function AdminSettingsPage() {
 
           {/* Name + Title */}
           <div style={S.grid2}>
-            <Field label="Agent Name" value={settings.wa_name} onChange={setS("wa_name")} placeholder="Lucky Benjamin" />
-            <Field label="Agent Title / Role" value={settings.wa_title} onChange={setS("wa_title")} placeholder="CEO, Mehurbs Properties Limited" />
+            <Field label="Agent Name" value={settings.wa_name} onChange={setS("wa_name")} placeholder="e.g. Amara Okafor" />
+            <Field label="Agent Title / Role" value={settings.wa_title} onChange={setS("wa_title")} placeholder="e.g. Customer Support Lead" />
           </div>
 
           {/* WhatsApp number */}
@@ -2339,7 +2339,7 @@ export default function AdminSettingsPage() {
             label="WhatsApp Number"
             value={settings.wa_number}
             onChange={setS("wa_number")}
-            placeholder="09021359415 or 2349021359415"
+            placeholder="08012345678 or 2348012345678"
           />
           <p style={{ fontSize: "0.72rem", color: "var(--color-text-muted, #94A3B8)", marginTop: "-0.75rem", marginBottom: "1rem", fontFamily: "Inter, sans-serif" }}>
             Nigerian format (09...) or international format (2349...) — both work.
@@ -2354,7 +2354,7 @@ export default function AdminSettingsPage() {
               onFocus={focus}
               onBlur={blur}
               rows={4}
-              placeholder={`Hi there! 👋 I'm Lucky Benjamin. I'm not available right now, but send me a message and I'll get back to you as soon as possible!`}
+              placeholder={`Hi there! 👋 I'm not available right now, but send me a message and I'll get back to you as soon as possible!`}
               style={{ ...S.input, resize: "vertical", lineHeight: 1.6 }}
             />
             <p style={{ fontSize: "0.72rem", color: "var(--color-text-muted, #94A3B8)", marginTop: "0.3rem", fontFamily: "Inter, sans-serif" }}>
@@ -2367,7 +2367,7 @@ export default function AdminSettingsPage() {
             label="WhatsApp Pre-fill Text (optional)"
             value={settings.wa_prefill}
             onChange={setS("wa_prefill")}
-            placeholder="Hello! I came across Mehurbs Properties and I'd like to enquire about a listing."
+            placeholder="Hello! I'd like to enquire about a listing."
           />
           <p style={{ fontSize: "0.72rem", color: "var(--color-text-muted, #94A3B8)", marginTop: "-0.75rem", marginBottom: "1.25rem", fontFamily: "Inter, sans-serif" }}>
             Pre-filled message visitors see when they tap "Start Chat on WhatsApp".

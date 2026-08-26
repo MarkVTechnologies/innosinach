@@ -63,18 +63,18 @@ export default function WhatsAppWidget({ settings = {} }) {
   const [visible, setVisible] = useState(false);
   const [animate, setAnimate] = useState(false);
 
-  const enabled = settings.wa_enabled !== "false";
-  const agentName = settings.wa_name || "Lucky Benjamin";
-  const agentTitle = settings.wa_title || "CEO, Mehurbs Properties Limited";
+  const rawNumber = settings.wa_number || settings.whatsapp || settings.phone || "";
+  const enabled = settings.wa_enabled !== "false" && !!rawNumber;
+  const agentName = settings.wa_name || "Support Team";
+  const agentTitle = settings.wa_title || settings.site_name || "";
   const agentAvatar = settings.wa_avatar || "";
   const greeting =
     settings.wa_message ||
     `Hi there! 👋 I'm ${agentName}. I'm not available right now, but send me a message and I'll get back to you as soon as possible. You can also reach me directly on the number below.`;
-  const rawNumber = settings.wa_number || settings.whatsapp || "09021359415";
   const waNumber = toWaNumber(rawNumber);
   const prefill = encodeURIComponent(
     settings.wa_prefill ||
-      "Hello! I came across Mehurbs Properties and I'd like to enquire about a listing.",
+      "Hello! I'd like to enquire about a listing.",
   );
   const waUrl = `https://wa.me/${waNumber}?text=${prefill}`;
   const callUrl = `tel:${rawNumber}`;
