@@ -755,6 +755,8 @@ export default function TeamPage() {
   const [members, setMembers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [modal, setModal] = useState(null); // null | { type, member }
+  const [deleteTarget, setDeleteTarget] = useState(null);
+  const [deleting, setDeleting] = useState(false);
 
   const isSuperAdmin = currentUser?.role === "super_admin";
 
@@ -785,15 +787,18 @@ export default function TeamPage() {
     load();
   };
 
-  const handleDelete = async (member) => {
-    if (!confirm(`Delete account for ${member.name}? This cannot be undone.`))
-      return;
+  const handleDelete = async () => {
+    if (!deleteTarget) return;
+    setDeleting(true);
     try {
-      await teamApi.delete(member._id || member.id);
-      toast.success(`${member.name}'s account deleted.`);
+      await teamApi.delete(deleteTarget._id);
+      toast.success(`${deleteTarget.name}'s account deleted.`);
+      setDeleteTarget(null);
       load();
     } catch (err) {
       toast.error(err.message || "Failed to delete account.");
+    } finally {
+      setDeleting(false);
     }
   };
 
@@ -1162,7 +1167,7 @@ export default function TeamPage() {
                           )}
                         </button>
                         <button
-                          onClick={() => handleDelete(member)}
+                          onClick={() => setDeleteTarget(member)}
                           title="Delete account"
                           style={{
                             padding: "0.5rem",
@@ -1228,6 +1233,91 @@ export default function TeamPage() {
             isSelf={String(modal.member._id) === String(currentUser?._id)}
             onClose={() => setModal(null)}
           />
+        </Modal>
+      )}
+
+      {deleteTarget && (
+        <Modal title="Delete Account" onClose={() => setDeleteTarget(null)}>
+          <div style={{ textAlign: "center" }}>
+            <div
+              style={{
+                width: "56px",
+                height: "56px",
+                borderRadius: "50%",
+                background: "#FEE2E2",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                margin: "0 auto 1rem",
+              }}
+            >
+              <AlertCircle size={28} color="#EF4444" />
+            </div>
+            <p
+              style={{
+                color: "#475569",
+                margin: "0 0 1.5rem",
+                lineHeight: 1.6,
+                fontFamily: "Inter, sans-serif",
+                fontSize: "0.875rem",
+              }}
+            >
+              Delete account for{" "}
+              <strong style={{ color: "#0F172A" }}>{deleteTarget.name}</strong>?
+              This cannot be undone.
+            </p>
+            <div style={{ display: "flex", gap: "0.75rem" }}>
+              <button
+                onClick={() => setDeleteTarget(null)}
+                style={{
+                  flex: 1,
+                  padding: "0.6875rem",
+                  borderRadius: "0.625rem",
+                  border: "1px solid #E2E8F0",
+                  background: "white",
+                  color: "#64748B",
+                  fontFamily: "Plus Jakarta Sans, sans-serif",
+                  fontWeight: 600,
+                  fontSize: "0.875rem",
+                  cursor: "pointer",
+                }}
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handleDelete}
+                disabled={deleting}
+                style={{
+                  flex: 2,
+                  padding: "0.6875rem",
+                  borderRadius: "0.625rem",
+                  border: "none",
+                  background: "linear-gradient(135deg, #FF6B6B 0%, #E85555 100%)",
+                  color: "white",
+                  fontFamily: "Plus Jakarta Sans, sans-serif",
+                  fontWeight: 700,
+                  fontSize: "0.875rem",
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: "0.375rem",
+                }}
+              >
+                {deleting ? (
+                  <>
+                    <Loader2
+                      size={15}
+                      style={{ animation: "spin 1s linear infinite" }}
+                    />{" "}
+                    Deleting…
+                  </>
+                ) : (
+                  "Delete"
+                )}
+              </button>
+            </div>
+          </div>
         </Modal>
       )}
 

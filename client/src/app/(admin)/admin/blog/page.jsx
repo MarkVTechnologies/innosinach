@@ -669,6 +669,7 @@ function CategoriesModal({ categories, onClose, onRefresh }) {
   const [editingId, setEditingId] = useState(null);
   const [editingName, setEditingName] = useState("");
   const [renamingId, setRenamingId] = useState(null);
+  const [deleteTarget, setDeleteTarget] = useState(null); // { id, name }
 
   const handleCreate = async () => {
     if (!name.trim()) return;
@@ -713,12 +714,13 @@ function CategoriesModal({ categories, onClose, onRefresh }) {
     }
   };
 
-  const handleDelete = async (id, catName) => {
-    if (!confirm(`Delete "${catName}"? Posts will be uncategorized.`)) return;
-    setDeletingId(id);
+  const handleDelete = async () => {
+    if (!deleteTarget) return;
+    setDeletingId(deleteTarget.id);
     try {
-      await blogApi.deleteCategory(id);
+      await blogApi.deleteCategory(deleteTarget.id);
       toast.success("Category deleted");
+      setDeleteTarget(null);
       onRefresh();
     } catch (err) {
       toast.error(err.message || "Failed");
@@ -728,6 +730,7 @@ function CategoriesModal({ categories, onClose, onRefresh }) {
   };
 
   return (
+    <>
     <div
       style={{
         position: "fixed",
@@ -1030,7 +1033,7 @@ function CategoriesModal({ categories, onClose, onRefresh }) {
                       </button>
                       <button
                         type="button"
-                        onClick={() => handleDelete(id, cat.name)}
+                        onClick={() => setDeleteTarget({ id, name: cat.name })}
                         disabled={isDeleting}
                         title="Delete"
                         style={{
@@ -1088,6 +1091,122 @@ function CategoriesModal({ categories, onClose, onRefresh }) {
         </div>
       </div>
     </div>
+
+    {deleteTarget && (
+      <div
+        onClick={(e) => {
+          if (e.target === e.currentTarget) setDeleteTarget(null);
+        }}
+        style={{
+          position: "fixed",
+          inset: 0,
+          zIndex: 1001,
+          background: "rgba(0,0,0,0.5)",
+          backdropFilter: "blur(4px)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "1rem",
+        }}
+      >
+        <div
+          onClick={(e) => e.stopPropagation()}
+          style={{
+            background: "white",
+            borderRadius: "1rem",
+            padding: "1.75rem",
+            width: "100%",
+            maxWidth: "400px",
+            textAlign: "center",
+            boxShadow: "0 32px 64px rgba(0,0,0,0.2)",
+          }}
+        >
+          <div
+            style={{
+              width: "56px",
+              height: "56px",
+              borderRadius: "50%",
+              background: "#FEE2E2",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              margin: "0 auto 1rem",
+            }}
+          >
+            <AlertCircle size={28} color="#EF4444" />
+          </div>
+          <p
+            style={{
+              color: "#475569",
+              margin: "0 0 1.5rem",
+              lineHeight: 1.6,
+              fontFamily: "Inter, sans-serif",
+              fontSize: "0.875rem",
+            }}
+          >
+            Delete{" "}
+            <strong style={{ color: "#0F172A" }}>
+              &ldquo;{deleteTarget.name}&rdquo;
+            </strong>
+            ? Posts will be uncategorized.
+          </p>
+          <div style={{ display: "flex", gap: "0.75rem" }}>
+            <button
+              type="button"
+              onClick={() => setDeleteTarget(null)}
+              style={{
+                flex: 1,
+                padding: "0.6875rem",
+                borderRadius: "0.625rem",
+                border: "1px solid #E2E8F0",
+                background: "white",
+                color: "#64748B",
+                fontFamily: "Plus Jakarta Sans, sans-serif",
+                fontWeight: 600,
+                fontSize: "0.875rem",
+                cursor: "pointer",
+              }}
+            >
+              Cancel
+            </button>
+            <button
+              type="button"
+              onClick={handleDelete}
+              disabled={!!deletingId}
+              style={{
+                flex: 2,
+                padding: "0.6875rem",
+                borderRadius: "0.625rem",
+                border: "none",
+                background: "linear-gradient(135deg, #FF6B6B 0%, #E85555 100%)",
+                color: "white",
+                fontFamily: "Plus Jakarta Sans, sans-serif",
+                fontWeight: 700,
+                fontSize: "0.875rem",
+                cursor: "pointer",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "0.375rem",
+              }}
+            >
+              {deletingId ? (
+                <>
+                  <Loader2
+                    size={15}
+                    style={{ animation: "spin 1s linear infinite" }}
+                  />{" "}
+                  Deleting…
+                </>
+              ) : (
+                "Delete"
+              )}
+            </button>
+          </div>
+        </div>
+      </div>
+    )}
+    </>
   );
 }
 

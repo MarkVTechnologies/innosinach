@@ -25,6 +25,7 @@ import {
   Check,
   StickyNote,
   Tag,
+  AlertCircle,
 } from "lucide-react";
 import Pagination from "@/components/admin/Pagination";
 
@@ -812,15 +813,15 @@ export default function EnquiriesPage() {
   };
 
   // ── Delete ────────────────────────────────────────────────────
-  const handleDelete = async (enquiry) => {
-    if (
-      !confirm(`Delete enquiry from ${enquiry.first_name}? Cannot be undone.`)
-    )
-      return;
-    setDeleting(getId(enquiry));
+  const [deleteTarget, setDeleteTarget] = useState(null);
+
+  const handleDelete = async () => {
+    if (!deleteTarget) return;
+    setDeleting(getId(deleteTarget));
     try {
-      await enquiriesApi.delete(getId(enquiry));
+      await enquiriesApi.delete(getId(deleteTarget));
       toast.success("Enquiry deleted");
+      setDeleteTarget(null);
       fetchData(page, filterStatus, search, perPage);
     } catch (err) {
       toast.error(err.message || "Delete failed");
@@ -1506,7 +1507,7 @@ export default function EnquiriesPage() {
                               <MessageCircle size={13} />
                             </a>
                             <button
-                              onClick={() => handleDelete(e)}
+                              onClick={() => setDeleteTarget(e)}
                               disabled={deleting === id}
                               title="Delete"
                               style={{
@@ -1559,6 +1560,119 @@ export default function EnquiriesPage() {
           onClose={() => setSelected(null)}
           onUpdate={() => fetchData(page, filterStatus, search, perPage)}
         />
+      )}
+
+      {deleteTarget && (
+        <div
+          onClick={(e) => {
+            if (e.target === e.currentTarget) setDeleteTarget(null);
+          }}
+          style={{
+            position: "fixed",
+            inset: 0,
+            zIndex: 100,
+            background: "rgba(0,0,0,0.5)",
+            backdropFilter: "blur(4px)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            padding: "1rem",
+          }}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              background: "white",
+              borderRadius: "1rem",
+              padding: "1.75rem",
+              width: "100%",
+              maxWidth: "400px",
+              textAlign: "center",
+              boxShadow: "0 32px 64px rgba(0,0,0,0.2)",
+            }}
+          >
+            <div
+              style={{
+                width: "56px",
+                height: "56px",
+                borderRadius: "50%",
+                background: "#FEE2E2",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                margin: "0 auto 1rem",
+              }}
+            >
+              <AlertCircle size={28} color="#EF4444" />
+            </div>
+            <p
+              style={{
+                color: "#475569",
+                margin: "0 0 1.5rem",
+                lineHeight: 1.6,
+                fontFamily: "Inter, sans-serif",
+                fontSize: "0.875rem",
+              }}
+            >
+              Delete enquiry from{" "}
+              <strong style={{ color: "#0F172A" }}>
+                {deleteTarget.first_name}
+              </strong>
+              ? This cannot be undone.
+            </p>
+            <div style={{ display: "flex", gap: "0.75rem" }}>
+              <button
+                onClick={() => setDeleteTarget(null)}
+                style={{
+                  flex: 1,
+                  padding: "0.6875rem",
+                  borderRadius: "0.625rem",
+                  border: "1px solid #E2E8F0",
+                  background: "white",
+                  color: "#64748B",
+                  fontFamily: "Plus Jakarta Sans, sans-serif",
+                  fontWeight: 600,
+                  fontSize: "0.875rem",
+                  cursor: "pointer",
+                }}
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handleDelete}
+                disabled={!!deleting}
+                style={{
+                  flex: 2,
+                  padding: "0.6875rem",
+                  borderRadius: "0.625rem",
+                  border: "none",
+                  background: "linear-gradient(135deg, #FF6B6B 0%, #E85555 100%)",
+                  color: "white",
+                  fontFamily: "Plus Jakarta Sans, sans-serif",
+                  fontWeight: 700,
+                  fontSize: "0.875rem",
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: "0.375rem",
+                }}
+              >
+                {deleting ? (
+                  <>
+                    <Loader2
+                      size={15}
+                      style={{ animation: "spin 1s linear infinite" }}
+                    />{" "}
+                    Deleting…
+                  </>
+                ) : (
+                  "Delete"
+                )}
+              </button>
+            </div>
+          </div>
+        </div>
       )}
 
       <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>

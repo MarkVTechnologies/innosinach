@@ -16,6 +16,7 @@ import {
   FolderOpen,
   Edit2,
   Check,
+  AlertCircle,
 } from "lucide-react";
 
 const FOLDERS = ["all", "lands", "houses", "blog", "general"];
@@ -30,10 +31,10 @@ function MediaCard({ item, onDelete, onAltSave, selected, onSelect }) {
   const saveAlt = async () => {
     setSaving(true);
     try {
-      await mediaApi.updateAlt(item.id, altText);
+      await mediaApi.updateAlt(item._id, altText);
       toast.success("Alt text saved");
       setEditAlt(false);
-      onAltSave(item.id, altText);
+      onAltSave(item._id, altText);
     } catch {
       toast.error("Failed to save");
     } finally {
@@ -402,19 +403,26 @@ export default function MediaPage() {
     fetch();
   }, [fetch]);
 
-  const handleDelete = async (item) => {
-    if (!confirm(`Delete ${item.filename}?`)) return;
+  const [deleteTarget, setDeleteTarget] = useState(null);
+  const [deleting, setDeleting] = useState(false);
+
+  const handleDelete = async () => {
+    if (!deleteTarget) return;
+    setDeleting(true);
     try {
-      await mediaApi.delete(item.id);
+      await mediaApi.delete(deleteTarget._id);
       toast.success("File deleted");
+      setDeleteTarget(null);
       fetch();
     } catch (err) {
       toast.error(err.message || "Delete failed");
+    } finally {
+      setDeleting(false);
     }
   };
 
   const handleAltSave = (id, alt) => {
-    setMedia((m) => m.map((x) => (x.id === id ? { ...x, alt_text: alt } : x)));
+    setMedia((m) => m.map((x) => (x._id === id ? { ...x, alt_text: alt } : x)));
   };
 
   return (
@@ -623,9 +631,9 @@ export default function MediaPage() {
           >
             {media.map((item) => (
               <MediaCard
-                key={item.id}
+                key={item._id}
                 item={item}
-                onDelete={handleDelete}
+                onDelete={setDeleteTarget}
                 onAltSave={handleAltSave}
                 selected={false}
                 onSelect={null}
@@ -684,6 +692,117 @@ export default function MediaPage() {
           </div>
         )}
       </div>
+      {deleteTarget && (
+        <div
+          onClick={(e) => {
+            if (e.target === e.currentTarget) setDeleteTarget(null);
+          }}
+          style={{
+            position: "fixed",
+            inset: 0,
+            zIndex: 100,
+            background: "rgba(0,0,0,0.5)",
+            backdropFilter: "blur(4px)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            padding: "1rem",
+          }}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              background: "white",
+              borderRadius: "1rem",
+              padding: "1.75rem",
+              width: "100%",
+              maxWidth: "400px",
+              textAlign: "center",
+              boxShadow: "0 32px 64px rgba(0,0,0,0.2)",
+            }}
+          >
+            <div
+              style={{
+                width: "56px",
+                height: "56px",
+                borderRadius: "50%",
+                background: "#FEE2E2",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                margin: "0 auto 1rem",
+              }}
+            >
+              <AlertCircle size={28} color="#EF4444" />
+            </div>
+            <p
+              style={{
+                color: "#475569",
+                margin: "0 0 1.5rem",
+                lineHeight: 1.6,
+                fontFamily: "Inter, sans-serif",
+                fontSize: "0.875rem",
+              }}
+            >
+              Delete{" "}
+              <strong style={{ color: "#0F172A" }}>{deleteTarget.filename}</strong>?
+              This cannot be undone.
+            </p>
+            <div style={{ display: "flex", gap: "0.75rem" }}>
+              <button
+                onClick={() => setDeleteTarget(null)}
+                style={{
+                  flex: 1,
+                  padding: "0.6875rem",
+                  borderRadius: "0.625rem",
+                  border: "1px solid #E2E8F0",
+                  background: "white",
+                  color: "#64748B",
+                  fontFamily: "Plus Jakarta Sans, sans-serif",
+                  fontWeight: 600,
+                  fontSize: "0.875rem",
+                  cursor: "pointer",
+                }}
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handleDelete}
+                disabled={deleting}
+                style={{
+                  flex: 2,
+                  padding: "0.6875rem",
+                  borderRadius: "0.625rem",
+                  border: "none",
+                  background: "linear-gradient(135deg, #FF6B6B 0%, #E85555 100%)",
+                  color: "white",
+                  fontFamily: "Plus Jakarta Sans, sans-serif",
+                  fontWeight: 700,
+                  fontSize: "0.875rem",
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: "0.375rem",
+                }}
+              >
+                {deleting ? (
+                  <>
+                    <Loader2
+                      size={15}
+                      style={{ animation: "spin 1s linear infinite" }}
+                    />{" "}
+                    Deleting…
+                  </>
+                ) : (
+                  "Delete"
+                )}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       <style>{`
         @keyframes spin { to { transform: rotate(360deg); } }
         @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }

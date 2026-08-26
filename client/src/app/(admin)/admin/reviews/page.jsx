@@ -117,10 +117,9 @@ function StarDisplay({ rating = 5 }) {
 function ReviewCard({ review, onEdit, onDelete, onToggle }) {
   const [deleting, setDeleting] = useState(false);
   const [toggling, setToggling] = useState(false);
+  const [confirmOpen, setConfirmOpen] = useState(false);
 
   const handleDelete = async () => {
-    if (!confirm(`Delete review from "${review.name}"? This cannot be undone.`))
-      return;
     setDeleting(true);
     try {
       await reviewsApi.delete(review._id);
@@ -128,7 +127,6 @@ function ReviewCard({ review, onEdit, onDelete, onToggle }) {
       onDelete(review._id);
     } catch (err) {
       toast.error(err.message || "Failed to delete");
-    } finally {
       setDeleting(false);
     }
   };
@@ -323,7 +321,7 @@ function ReviewCard({ review, onEdit, onDelete, onToggle }) {
         </button>
 
         <button
-          onClick={handleDelete}
+          onClick={() => setConfirmOpen(true)}
           disabled={deleting}
           style={{
             display: "flex",
@@ -346,6 +344,106 @@ function ReviewCard({ review, onEdit, onDelete, onToggle }) {
           )}
         </button>
       </div>
+
+      {confirmOpen && (
+        <div
+          onClick={(e) => {
+            if (e.target === e.currentTarget) setConfirmOpen(false);
+          }}
+          style={{
+            position: "fixed",
+            inset: 0,
+            zIndex: 100,
+            background: "rgba(0,0,0,0.5)",
+            backdropFilter: "blur(4px)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            padding: "1rem",
+          }}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              background: "white",
+              borderRadius: "1rem",
+              padding: "1.75rem",
+              width: "100%",
+              maxWidth: "400px",
+              textAlign: "center",
+              boxShadow: "0 32px 64px rgba(0,0,0,0.2)",
+            }}
+          >
+            <div
+              style={{
+                width: "56px",
+                height: "56px",
+                borderRadius: "50%",
+                background: "#FEE2E2",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                margin: "0 auto 1rem",
+              }}
+            >
+              <AlertCircle size={28} color="#EF4444" />
+            </div>
+            <p
+              style={{
+                color: "#475569",
+                margin: "0 0 1.5rem",
+                lineHeight: 1.6,
+                fontFamily: "Inter, sans-serif",
+                fontSize: "0.875rem",
+              }}
+            >
+              Delete review from{" "}
+              <strong style={{ color: "#0F172A" }}>&ldquo;{review.name}&rdquo;</strong>?
+              This cannot be undone.
+            </p>
+            <div style={{ display: "flex", gap: "0.75rem" }}>
+              <button
+                onClick={() => setConfirmOpen(false)}
+                style={{
+                  flex: 1,
+                  padding: "0.6875rem",
+                  borderRadius: "0.625rem",
+                  border: "1px solid #E2E8F0",
+                  background: "white",
+                  color: "#64748B",
+                  fontFamily: "Plus Jakarta Sans, sans-serif",
+                  fontWeight: 600,
+                  fontSize: "0.875rem",
+                  cursor: "pointer",
+                }}
+              >
+                Cancel
+              </button>
+              <button
+                onClick={() => {
+                  setConfirmOpen(false);
+                  handleDelete();
+                }}
+                disabled={deleting}
+                style={{
+                  flex: 2,
+                  padding: "0.6875rem",
+                  borderRadius: "0.625rem",
+                  border: "none",
+                  background: "linear-gradient(135deg, #FF6B6B 0%, #E85555 100%)",
+                  color: "white",
+                  fontFamily: "Plus Jakarta Sans, sans-serif",
+                  fontWeight: 700,
+                  fontSize: "0.875rem",
+                  cursor: "pointer",
+                }}
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
