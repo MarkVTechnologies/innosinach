@@ -167,7 +167,7 @@ function TeamCard({ member }) {
                 height: "80px",
                 borderRadius: "50%",
                 background:
-                  "linear-gradient(135deg, var(--color-primary), #E85555)",
+                  "linear-gradient(135deg, var(--color-primary), #2F6FE0)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -337,8 +337,8 @@ function ValueCard({ value, index }) {
   const icons = [Target, Eye, Award, CheckCircle, Star, Users];
   const Icon = icons[index % icons.length];
   const colors = [
-    "#FF6B6B",
-    "#38BDF8",
+    "#5994FA",
+    "#5994FA",
     "#F59E0B",
     "#22C55E",
     "#A78BFA",
@@ -607,7 +607,7 @@ export default function AboutClient({ about, settings }) {
                   padding: "0.625rem 1.25rem",
                   background: "var(--color-primary-muted)",
                   borderRadius: "var(--radius-full)",
-                  border: "1px solid rgba(255,107,107,0.2)",
+                  border: "1px solid rgba(89, 148, 250,0.2)",
                 }}
               >
                 <Award size={15} style={{ color: "var(--color-primary)" }} />
@@ -683,8 +683,8 @@ export default function AboutClient({ about, settings }) {
           }}
         >
           {[
-            { icon: Target, label: "Mission", text: mission, color: "#FF6B6B" },
-            { icon: Eye, label: "Vision", text: vision, color: "#38BDF8" },
+            { icon: Target, label: "Mission", text: mission, color: "#5994FA" },
+            { icon: Eye, label: "Vision", text: vision, color: "#5994FA" },
           ].map(({ icon: Icon, label, text, color }) => (
             <div
               key={label}
@@ -888,7 +888,7 @@ export default function AboutClient({ about, settings }) {
             height: "500px",
             borderRadius: "50%",
             background:
-              "radial-gradient(circle, rgba(255,107,107,0.08) 0%, transparent 65%)",
+              "radial-gradient(circle, rgba(89, 148, 250,0.08) 0%, transparent 65%)",
           }}
         />
         <div

@@ -46,7 +46,7 @@ function MediaCard({ item, onDelete, onAltSave, selected, onSelect }) {
     <div
       style={{
         borderRadius: "0.875rem",
-        border: `2px solid ${selected ? "#FF6B6B" : "#E2E8F0"}`,
+        border: `2px solid ${selected ? "#5994FA" : "#E2E8F0"}`,
         overflow: "hidden",
         background: "white",
         transition: "all 150ms",
@@ -55,8 +55,8 @@ function MediaCard({ item, onDelete, onAltSave, selected, onSelect }) {
       onClick={() => onSelect && onSelect(item)}
       onMouseEnter={(e) => {
         if (!selected && !onSelect) return;
-        e.currentTarget.style.borderColor = "#FF6B6B";
-        e.currentTarget.style.boxShadow = "0 0 0 3px rgba(255,107,107,0.15)";
+        e.currentTarget.style.borderColor = "#5994FA";
+        e.currentTarget.style.boxShadow = "0 0 0 3px rgba(89, 148, 250,0.15)";
       }}
       onMouseLeave={(e) => {
         if (!selected) {
@@ -91,7 +91,7 @@ function MediaCard({ item, onDelete, onAltSave, selected, onSelect }) {
               width: "1.5rem",
               height: "1.5rem",
               borderRadius: "50%",
-              background: "#FF6B6B",
+              background: "#5994FA",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -150,7 +150,7 @@ function MediaCard({ item, onDelete, onAltSave, selected, onSelect }) {
                 onClick={saveAlt}
                 disabled={saving}
                 style={{
-                  background: "#FF6B6B",
+                  background: "#5994FA",
                   color: "white",
                   border: "none",
                   cursor: "pointer",
@@ -291,7 +291,7 @@ function UploadZone({ folder, onUploaded }) {
       onDrop={onDrop}
       onClick={() => inputRef.current?.click()}
       style={{
-        border: `2px dashed ${dragging ? "#FF6B6B" : "#E2E8F0"}`,
+        border: `2px dashed ${dragging ? "#5994FA" : "#E2E8F0"}`,
         borderRadius: "1rem",
         padding: "2rem",
         textAlign: "center",
@@ -317,7 +317,7 @@ function UploadZone({ folder, onUploaded }) {
           <Loader2
             size={28}
             style={{
-              color: "#FF6B6B",
+              color: "#5994FA",
               animation: "spin 1s linear infinite",
               margin: "0 auto 0.75rem",
             }}
@@ -448,7 +448,7 @@ export default function MediaPage() {
                 marginBottom: "0.25rem",
               }}
             >
-              <ImageIcon size={20} style={{ color: "#FF6B6B" }} />
+              <ImageIcon size={20} style={{ color: "#5994FA" }} />
               <h1
                 style={{
                   fontFamily: "Plus Jakarta Sans, sans-serif",
@@ -532,9 +532,9 @@ export default function MediaPage() {
               style={{
                 padding: "0.4rem 1rem",
                 borderRadius: "9999px",
-                border: `1px solid ${folder === f ? "#FF6B6B" : "#E2E8F0"}`,
+                border: `1px solid ${folder === f ? "#5994FA" : "#E2E8F0"}`,
                 background: folder === f ? "#FFECEC" : "white",
-                color: folder === f ? "#FF6B6B" : "#475569",
+                color: folder === f ? "#5994FA" : "#475569",
                 fontFamily: "Plus Jakarta Sans, sans-serif",
                 fontWeight: 600,
                 fontSize: "0.8125rem",
@@ -774,7 +774,7 @@ export default function MediaPage() {
                   padding: "0.6875rem",
                   borderRadius: "0.625rem",
                   border: "none",
-                  background: "linear-gradient(135deg, #FF6B6B 0%, #E85555 100%)",
+                  background: "linear-gradient(135deg, #5994FA 0%, #2F6FE0 100%)",
                   color: "white",
                   fontFamily: "Plus Jakarta Sans, sans-serif",
                   fontWeight: 700,

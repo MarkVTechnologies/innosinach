@@ -470,7 +470,7 @@ export default function BlogPostClient({ post, settings, related }) {
       <section
         style={{
           background:
-            "linear-gradient(135deg, var(--color-secondary-dark) 0%, var(--color-secondary) 60%, #1E2D4A 100%)",
+            "linear-gradient(135deg, var(--color-secondary-dark) 0%, var(--color-secondary) 60%, #1F3086 100%)",
           paddingTop: "7rem",
           paddingBottom: "3rem",
           position: "relative",
@@ -487,7 +487,7 @@ export default function BlogPostClient({ post, settings, related }) {
             height: "500px",
             borderRadius: "50%",
             background:
-              "radial-gradient(circle, rgba(255,107,107,0.08) 0%, transparent 65%)",
+              "radial-gradient(circle, rgba(89, 148, 250,0.08) 0%, transparent 65%)",
             pointerEvents: "none",
           }}
         />
@@ -559,9 +559,9 @@ export default function BlogPostClient({ post, settings, related }) {
                 display: "inline-flex",
                 alignItems: "center",
                 gap: "0.375rem",
-                background: "rgba(255,107,107,0.15)",
+                background: "rgba(89, 148, 250,0.15)",
                 color: "var(--color-primary)",
-                border: "1px solid rgba(255,107,107,0.3)",
+                border: "1px solid rgba(89, 148, 250,0.3)",
                 padding: "0.3rem 0.875rem",
                 borderRadius: "var(--radius-full)",
                 fontSize: "0.75rem",
@@ -611,7 +611,7 @@ export default function BlogPostClient({ post, settings, related }) {
                     height: "2rem",
                     borderRadius: "50%",
                     background:
-                      "linear-gradient(135deg, var(--color-primary), #E85555)",
+                      "linear-gradient(135deg, var(--color-primary), #2F6FE0)",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -854,7 +854,7 @@ export default function BlogPostClient({ post, settings, related }) {
                       height: "3.5rem",
                       borderRadius: "50%",
                       background:
-                        "linear-gradient(135deg, var(--color-primary), #E85555)",
+                        "linear-gradient(135deg, var(--color-primary), #2F6FE0)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",

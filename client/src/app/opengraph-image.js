@@ -11,7 +11,7 @@ export default function OGImage() {
     (
       <div
         style={{
-          background: "#1a0a2e",
+          background: "#17256b",
           width: "100%",
           height: "100%",
           display: "flex",
@@ -32,7 +32,7 @@ export default function OGImage() {
             width: 520,
             height: 520,
             borderRadius: "50%",
-            background: "rgba(164,55,149,0.07)",
+            background: "rgba(89, 148, 250,0.07)",
             display: "flex",
           }}
         />
@@ -44,7 +44,7 @@ export default function OGImage() {
             width: 380,
             height: 380,
             borderRadius: "50%",
-            background: "rgba(164,55,149,0.04)",
+            background: "rgba(89, 148, 250,0.04)",
             display: "flex",
           }}
         />
@@ -56,7 +56,7 @@ export default function OGImage() {
             width: 240,
             height: 240,
             borderRadius: "50%",
-            background: "rgba(164,55,149,0.05)",
+            background: "rgba(89, 148, 250,0.05)",
             display: "flex",
           }}
         />
@@ -74,7 +74,7 @@ export default function OGImage() {
             style={{
               width: 60,
               height: 60,
-              background: "#a43795",
+              background: "#5994fa",
               borderRadius: 14,
               display: "flex",
               alignItems: "center",
@@ -83,7 +83,7 @@ export default function OGImage() {
           >
             <span
               style={{
-                color: "#1a0a2e",
+                color: "#17256b",
                 fontSize: 36,
                 fontWeight: 900,
                 lineHeight: 1,
@@ -91,7 +91,7 @@ export default function OGImage() {
                 letterSpacing: "-1px",
               }}
             >
-              M
+              I
             </span>
           </div>
           <span
@@ -110,7 +110,7 @@ export default function OGImage() {
         {/* Headline — line 1 in lime */}
         <div
           style={{
-            color: "#a43795",
+            color: "#5994fa",
             fontSize: 78,
             fontWeight: 800,
             lineHeight: 1.05,

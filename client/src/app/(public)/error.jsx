@@ -59,7 +59,7 @@ export default function PublicError({ error, reset }) {
       <button
         onClick={reset}
         style={{
-          background: "var(--color-primary, #a43795)",
+          background: "var(--color-primary, #5994fa)",
           color: "#ffffff",
           border: "none",
           borderRadius: "var(--radius, 0.625rem)",

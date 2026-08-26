@@ -22,18 +22,19 @@ import { ImageResponse } from "next/og";
 export const runtime = "edge";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME || "Innosinach";
 
-// Brand colours — Magenta Royale theme
-const PRIMARY = "#a43795";
-const SECONDARY = "#1a0a2e";
+// Brand colours — Innosinach Navy theme
+const PRIMARY = "#5994fa";
+const SECONDARY = "#17256b";
 const WHITE = "#FFFFFF";
 const MUTED = "rgba(255,255,255,0.55)";
 
 const TYPE_CONFIG = {
-  land: { label: "Land Listing", accent: "#a43795" },
-  house: { label: "House Listing", accent: "#c55ab5" },
-  blog: { label: "Blog & Insights", accent: "#e040fb" },
-  default: { label: "Premium Properties", accent: "#a43795" },
+  land: { label: "Land Listing", accent: "#5994fa" },
+  house: { label: "House Listing", accent: "#8ab3fc" },
+  blog: { label: "Blog & Insights", accent: "#7fb0fd" },
+  default: { label: "Premium Properties", accent: "#5994fa" },
 };
 
 export async function GET(request) {
@@ -45,7 +46,7 @@ export async function GET(request) {
   const price = searchParams.get("price") || "";
   const type = searchParams.get("type") || "default";
   const imageUrl = searchParams.get("image") || "";
-  const siteName = searchParams.get("site") || "E&J Property";
+  const siteName = searchParams.get("site") || SITE_NAME;
 
   const config = TYPE_CONFIG[type] || TYPE_CONFIG.default;
 
@@ -86,7 +87,7 @@ export async function GET(request) {
           position: "absolute",
           inset: 0,
           background: hasImage
-            ? `linear-gradient(to right, rgba(26,10,46,1) 0%, rgba(26,10,46,0.97) 38%, rgba(26,10,46,0.6) 58%, rgba(26,10,46,0.05) 100%)`
+            ? `linear-gradient(to right, rgba(23, 37, 107,1) 0%, rgba(23, 37, 107,0.97) 38%, rgba(23, 37, 107,0.6) 58%, rgba(23, 37, 107,0.05) 100%)`
             : `linear-gradient(135deg, ${SECONDARY}FF 0%, #2e1352EE 60%, #4a1f7c99 100%)`,
           display: "flex",
         }}
@@ -98,7 +99,7 @@ export async function GET(request) {
           style={{
             position: "absolute",
             inset: 0,
-            backgroundImage: `radial-gradient(rgba(164,55,149,0.12) 1.5px, transparent 1.5px)`,
+            backgroundImage: `radial-gradient(rgba(89, 148, 250,0.12) 1.5px, transparent 1.5px)`,
             backgroundSize: "32px 32px",
             display: "flex",
           }}
@@ -294,7 +295,7 @@ export async function GET(request) {
             position: "absolute",
             bottom: "24px",
             right: "28px",
-            background: "rgba(26,10,46,0.75)",
+            background: "rgba(23, 37, 107,0.75)",
             border: `1px solid ${config.accent}50`,
             borderRadius: "999px",
             padding: "6px 14px",

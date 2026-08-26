@@ -137,7 +137,7 @@ function ImageUpload({ label, value, onChange, folder = "houses" }) {
           transition: "all 150ms",
         }}
         onMouseEnter={(e) => {
-          if (!url) e.currentTarget.style.borderColor = "var(--color-primary, #a43795)";
+          if (!url) e.currentTarget.style.borderColor = "var(--color-primary, #5994fa)";
         }}
         onMouseLeave={(e) => {
           if (!url) e.currentTarget.style.borderColor = "#e2e8f0";
@@ -155,7 +155,7 @@ function ImageUpload({ label, value, onChange, folder = "houses" }) {
             <Loader2
               size={26}
               style={{
-                color: "var(--color-primary, #a43795)",
+                color: "var(--color-primary, #5994fa)",
                 animation: "spin 1s linear infinite",
                 display: "block",
                 margin: "0 auto 0.5rem",
@@ -353,7 +353,7 @@ function GalleryUpload({ value = [], onChange, folder = "houses" }) {
             background: "#f8fafc",
             gap: "0.25rem",
           }}
-          onMouseEnter={(e) => (e.currentTarget.style.borderColor = "var(--color-primary, #a43795)")}
+          onMouseEnter={(e) => (e.currentTarget.style.borderColor = "var(--color-primary, #5994fa)")}
           onMouseLeave={(e) => (e.currentTarget.style.borderColor = "#e2e8f0")}
         >
           <input
@@ -367,7 +367,7 @@ function GalleryUpload({ value = [], onChange, folder = "houses" }) {
           {uploading ? (
             <Loader2
               size={20}
-              style={{ color: "var(--color-primary, #a43795)", animation: "spin 1s linear infinite" }}
+              style={{ color: "var(--color-primary, #5994fa)", animation: "spin 1s linear infinite" }}
             />
           ) : (
             <>
@@ -789,7 +789,7 @@ function HouseForm({ initial, onSave, onClose, saving }) {
             width: "44px",
             height: "24px",
             borderRadius: "9999px",
-            background: form.featured ? "var(--color-primary, #a43795)" : "#e2e8f0",
+            background: form.featured ? "var(--color-primary, #5994fa)" : "#e2e8f0",
             position: "relative",
             cursor: "pointer",
             transition: "background 0.2s",
@@ -968,7 +968,7 @@ export default function AdminHousesPage() {
                 marginBottom: "0.25rem",
               }}
             >
-              <Home size={20} style={{ color: "var(--color-primary, #a43795)" }} />
+              <Home size={20} style={{ color: "var(--color-primary, #5994fa)" }} />
               <h1
                 style={{
                   fontWeight: 800,
@@ -1095,7 +1095,7 @@ export default function AdminHousesPage() {
               <Loader2
                 size={30}
                 style={{
-                  color: "var(--color-primary, #a43795)",
+                  color: "var(--color-primary, #5994fa)",
                   animation: "spin 1s linear infinite",
                   display: "block",
                   margin: "0 auto 0.75rem",
@@ -1388,7 +1388,7 @@ export default function AdminHousesPage() {
                     onClick={() => setPage(p)}
                     style={{
                       ...S.pageBtn,
-                      background: p === page ? "var(--color-primary, #a43795)" : "#fff",
+                      background: p === page ? "var(--color-primary, #5994fa)" : "#fff",
                       color: p === page ? "#ffffff" : "#475569",
                     }}
                   >
@@ -1527,7 +1527,7 @@ const S = {
   row2: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" },
   row3: { display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1rem" },
   btnPrimary: {
-    background: "var(--color-primary, #a43795)",
+    background: "var(--color-primary, #5994fa)",
     color: "#ffffff",
     border: "none",
     cursor: "pointer",

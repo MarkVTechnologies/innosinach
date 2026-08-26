@@ -209,7 +209,7 @@ function ReviewCard({ review, onEdit, onDelete, onToggle }) {
             width: "2.25rem",
             height: "2.25rem",
             borderRadius: "50%",
-            background: "linear-gradient(135deg, #FF6B6B, #0F172A)",
+            background: "linear-gradient(135deg, #5994FA, #0F172A)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -277,8 +277,8 @@ function ReviewCard({ review, onEdit, onDelete, onToggle }) {
             transition: "all 150ms",
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.borderColor = "var(--color-primary, #FF6B6B)";
-            e.currentTarget.style.color = "var(--color-primary, #FF6B6B)";
+            e.currentTarget.style.borderColor = "var(--color-primary, #5994FA)";
+            e.currentTarget.style.color = "var(--color-primary, #5994FA)";
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.borderColor = "var(--color-border, #E2E8F0)";
@@ -430,7 +430,7 @@ function ReviewCard({ review, onEdit, onDelete, onToggle }) {
                   padding: "0.6875rem",
                   borderRadius: "0.625rem",
                   border: "none",
-                  background: "linear-gradient(135deg, #FF6B6B 0%, #E85555 100%)",
+                  background: "linear-gradient(135deg, #5994FA 0%, #2F6FE0 100%)",
                   color: "white",
                   fontFamily: "Plus Jakarta Sans, sans-serif",
                   fontWeight: 700,
@@ -557,7 +557,7 @@ function ReviewModal({ initial, onClose, onSave }) {
           <div>
             <label style={S.label}>
               Client Name{" "}
-              <span style={{ color: "var(--color-primary, #FF6B6B)" }}>*</span>
+              <span style={{ color: "var(--color-primary, #5994FA)" }}>*</span>
             </label>
             <input
               value={form.name}
@@ -565,7 +565,7 @@ function ReviewModal({ initial, onClose, onSave }) {
               placeholder="e.g. Chukwuemeka Obi"
               style={S.input}
               onFocus={(e) =>
-                (e.target.style.borderColor = "var(--color-primary, #FF6B6B)")
+                (e.target.style.borderColor = "var(--color-primary, #5994FA)")
               }
               onBlur={(e) =>
                 (e.target.style.borderColor = "var(--color-border, #E2E8F0)")
@@ -582,7 +582,7 @@ function ReviewModal({ initial, onClose, onSave }) {
               placeholder="e.g. Land Buyer, Lekki"
               style={S.input}
               onFocus={(e) =>
-                (e.target.style.borderColor = "var(--color-primary, #FF6B6B)")
+                (e.target.style.borderColor = "var(--color-primary, #5994FA)")
               }
               onBlur={(e) =>
                 (e.target.style.borderColor = "var(--color-border, #E2E8F0)")
@@ -603,7 +603,7 @@ function ReviewModal({ initial, onClose, onSave }) {
           <div>
             <label style={S.label}>
               Review Text{" "}
-              <span style={{ color: "var(--color-primary, #FF6B6B)" }}>*</span>
+              <span style={{ color: "var(--color-primary, #5994FA)" }}>*</span>
             </label>
             <textarea
               value={form.review}
@@ -612,7 +612,7 @@ function ReviewModal({ initial, onClose, onSave }) {
               rows={4}
               style={{ ...S.input, resize: "vertical" }}
               onFocus={(e) =>
-                (e.target.style.borderColor = "var(--color-primary, #FF6B6B)")
+                (e.target.style.borderColor = "var(--color-primary, #5994FA)")
               }
               onBlur={(e) =>
                 (e.target.style.borderColor = "var(--color-border, #E2E8F0)")
@@ -639,7 +639,7 @@ function ReviewModal({ initial, onClose, onSave }) {
                 min={0}
                 style={S.input}
                 onFocus={(e) =>
-                  (e.target.style.borderColor = "var(--color-primary, #FF6B6B)")
+                  (e.target.style.borderColor = "var(--color-primary, #5994FA)")
                 }
                 onBlur={(e) =>
                   (e.target.style.borderColor = "var(--color-border, #E2E8F0)")
@@ -680,7 +680,7 @@ function ReviewModal({ initial, onClose, onSave }) {
                     style={{
                       width: "1rem",
                       height: "1rem",
-                      accentColor: "#FF6B6B",
+                      accentColor: "#5994FA",
                     }}
                   />
                   <span
@@ -727,7 +727,7 @@ function ReviewModal({ initial, onClose, onSave }) {
                 padding: "0.75rem",
                 borderRadius: "var(--radius, 0.625rem)",
                 border: "none",
-                background: "linear-gradient(135deg, #FF6B6B, #E85555)",
+                background: "linear-gradient(135deg, #5994FA, #2F6FE0)",
                 color: "white",
                 fontFamily: "Plus Jakarta Sans, sans-serif",
                 fontWeight: 700,
@@ -835,7 +835,7 @@ export default function AdminReviewsPage() {
             >
               <Star
                 size={20}
-                style={{ color: "var(--color-primary, #FF6B6B)" }}
+                style={{ color: "var(--color-primary, #5994FA)" }}
               />
               <h1
                 style={{
@@ -897,7 +897,7 @@ export default function AdminReviewsPage() {
                 padding: "0.5rem 1.125rem",
                 borderRadius: "var(--radius, 0.625rem)",
                 border: "none",
-                background: "linear-gradient(135deg, #FF6B6B, #E85555)",
+                background: "linear-gradient(135deg, #5994FA, #2F6FE0)",
                 color: "white",
                 fontFamily: "Plus Jakarta Sans, sans-serif",
                 fontWeight: 700,
@@ -934,7 +934,7 @@ export default function AdminReviewsPage() {
             placeholder="Search by name or review text..."
             style={{ ...S.input, paddingLeft: "2.25rem" }}
             onFocus={(e) =>
-              (e.target.style.borderColor = "var(--color-primary, #FF6B6B)")
+              (e.target.style.borderColor = "var(--color-primary, #5994FA)")
             }
             onBlur={(e) =>
               (e.target.style.borderColor = "var(--color-border, #E2E8F0)")
@@ -1047,7 +1047,7 @@ export default function AdminReviewsPage() {
                   padding: "0.625rem 1.25rem",
                   borderRadius: "var(--radius, 0.625rem)",
                   border: "none",
-                  background: "var(--color-primary, #FF6B6B)",
+                  background: "var(--color-primary, #5994FA)",
                   color: "white",
                   fontFamily: "Plus Jakarta Sans, sans-serif",
                   fontWeight: 700,

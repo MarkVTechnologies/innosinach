@@ -31,7 +31,7 @@ function Initials({ name, size = 56 }) {
         width: size,
         height: size,
         borderRadius: "50%",
-        background: "linear-gradient(135deg, var(--color-primary, #a43795), var(--color-primary-dark, #7d2a72))",
+        background: "linear-gradient(135deg, var(--color-primary, #5994fa), var(--color-primary-dark, #2f6fe0))",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -175,7 +175,7 @@ export default function WhatsAppWidget({ settings = {} }) {
             {/* Header */}
             <div
               style={{
-                background: "linear-gradient(135deg, var(--color-secondary, #1a0a2e) 0%, var(--color-secondary-mid, #2e1352) 100%)",
+                background: "linear-gradient(135deg, var(--color-secondary, #17256b) 0%, var(--color-secondary-mid, #1f3086) 100%)",
                 padding: "1.125rem 1.125rem 1.25rem",
                 position: "relative",
               }}
@@ -242,7 +242,7 @@ export default function WhatsAppWidget({ settings = {} }) {
                       height: 13,
                       borderRadius: "50%",
                       background: "#25D366",
-                      border: "2px solid var(--color-secondary, #1a0a2e)",
+                      border: "2px solid var(--color-secondary, #17256b)",
                     }}
                   />
                 </div>
@@ -277,7 +277,7 @@ export default function WhatsAppWidget({ settings = {} }) {
                       alignItems: "center",
                       gap: "0.3rem",
                       fontSize: "0.68rem",
-                      color: "var(--color-primary, #a43795)",
+                      color: "var(--color-primary, #5994fa)",
                       fontWeight: 600,
                       fontFamily: "Inter, sans-serif",
                     }}
@@ -430,8 +430,8 @@ export default function WhatsAppWidget({ settings = {} }) {
                   alignItems: "center",
                   justifyContent: "center",
                   gap: "0.5rem",
-                  background: "var(--color-surface-2, #fdf6fb)",
-                  color: "var(--color-secondary, #1a0a2e)",
+                  background: "var(--color-surface-2, #f4f8ff)",
+                  color: "var(--color-secondary, #17256b)",
                   textDecoration: "none",
                   borderRadius: "0.75rem",
                   padding: "0.625rem 1rem",

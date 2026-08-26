@@ -231,7 +231,7 @@ function EnquiryModal({ enquiry, onClose, onUpdate }) {
                 width: "2.25rem",
                 height: "2.25rem",
                 borderRadius: "50%",
-                background: "linear-gradient(135deg, #FF6B6B, #0F172A)",
+                background: "linear-gradient(135deg, #5994FA, #0F172A)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -313,7 +313,7 @@ function EnquiryModal({ enquiry, onClose, onUpdate }) {
               <Phone
                 size={14}
                 style={{
-                  color: "var(--color-primary, #FF6B6B)",
+                  color: "var(--color-primary, #5994FA)",
                   flexShrink: 0,
                 }}
               />
@@ -353,7 +353,7 @@ function EnquiryModal({ enquiry, onClose, onUpdate }) {
                 <Mail
                   size={14}
                   style={{
-                    color: "var(--color-primary, #FF6B6B)",
+                    color: "var(--color-primary, #5994FA)",
                     flexShrink: 0,
                   }}
                 />
@@ -394,7 +394,7 @@ function EnquiryModal({ enquiry, onClose, onUpdate }) {
               <Tag
                 size={14}
                 style={{
-                  color: "var(--color-primary, #FF6B6B)",
+                  color: "var(--color-primary, #5994FA)",
                   flexShrink: 0,
                 }}
               />
@@ -428,7 +428,7 @@ function EnquiryModal({ enquiry, onClose, onUpdate }) {
               <Globe
                 size={14}
                 style={{
-                  color: "var(--color-primary, #FF6B6B)",
+                  color: "var(--color-primary, #5994FA)",
                   flexShrink: 0,
                 }}
               />
@@ -628,7 +628,7 @@ function EnquiryModal({ enquiry, onClose, onUpdate }) {
                 boxSizing: "border-box",
               }}
               onFocus={(e) =>
-                (e.target.style.borderColor = "var(--color-primary, #FF6B6B)")
+                (e.target.style.borderColor = "var(--color-primary, #5994FA)")
               }
               onBlur={(e) =>
                 (e.target.style.borderColor = "var(--color-border, #E2E8F0)")
@@ -673,8 +673,8 @@ function EnquiryModal({ enquiry, onClose, onUpdate }) {
                 borderRadius: "var(--radius, 0.75rem)",
                 border: "none",
                 background: saving
-                  ? "rgba(255,107,107,0.5)"
-                  : "linear-gradient(135deg, #FF6B6B 0%, #E85555 100%)",
+                  ? "rgba(89, 148, 250,0.5)"
+                  : "linear-gradient(135deg, #5994FA 0%, #2F6FE0 100%)",
                 color: "white",
                 fontFamily: "var(--font-heading)",
                 fontWeight: 700,
@@ -682,7 +682,7 @@ function EnquiryModal({ enquiry, onClose, onUpdate }) {
                 cursor: saving ? "not-allowed" : "pointer",
                 boxShadow: saving
                   ? "none"
-                  : "0 4px 12px rgba(255,107,107,0.25)",
+                  : "0 4px 12px rgba(89, 148, 250,0.25)",
               }}
             >
               {saving ? (
@@ -896,7 +896,7 @@ export default function EnquiriesPage() {
             >
               <MessageSquare
                 size={20}
-                style={{ color: "var(--color-primary, #FF6B6B)" }}
+                style={{ color: "var(--color-primary, #5994FA)" }}
               />
               <h1
                 style={{
@@ -1020,9 +1020,9 @@ export default function EnquiriesPage() {
                 style={{
                   padding: "0.4rem 1rem",
                   borderRadius: "9999px",
-                  border: `1px solid ${active ? s.color || "#FF6B6B" : "#E2E8F0"}`,
+                  border: `1px solid ${active ? s.color || "#5994FA" : "#E2E8F0"}`,
                   background: active ? s.bg || "#FFECEC" : "white",
-                  color: active ? s.color || "#FF6B6B" : "#475569",
+                  color: active ? s.color || "#5994FA" : "#475569",
                   fontFamily: "var(--font-heading)",
                   fontWeight: 600,
                   fontSize: "0.8125rem",
@@ -1188,7 +1188,7 @@ export default function EnquiriesPage() {
               <Loader2
                 size={28}
                 style={{
-                  color: "var(--color-primary, #FF6B6B)",
+                  color: "var(--color-primary, #5994FA)",
                   animation: "spin 1s linear infinite",
                   margin: "0 auto 0.75rem",
                   display: "block",
@@ -1354,7 +1354,7 @@ export default function EnquiriesPage() {
                                 height: "1.875rem",
                                 borderRadius: "50%",
                                 background:
-                                  "linear-gradient(135deg, #FF6B6B, #0F172A)",
+                                  "linear-gradient(135deg, #5994FA, #0F172A)",
                                 display: "flex",
                                 alignItems: "center",
                                 justifyContent: "center",
@@ -1646,7 +1646,7 @@ export default function EnquiriesPage() {
                   padding: "0.6875rem",
                   borderRadius: "0.625rem",
                   border: "none",
-                  background: "linear-gradient(135deg, #FF6B6B 0%, #E85555 100%)",
+                  background: "linear-gradient(135deg, #5994FA 0%, #2F6FE0 100%)",
                   color: "white",
                   fontFamily: "Plus Jakarta Sans, sans-serif",
                   fontWeight: 700,

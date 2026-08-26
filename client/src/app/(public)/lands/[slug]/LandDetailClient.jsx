@@ -522,7 +522,7 @@ export default function LandDetailClient({ land, settings, related }) {
       <section
         style={{
           background:
-            "linear-gradient(135deg, var(--color-secondary-dark) 0%, var(--color-secondary) 60%, #1E2D4A 100%)",
+            "linear-gradient(135deg, var(--color-secondary-dark) 0%, var(--color-secondary) 60%, #1F3086 100%)",
           paddingTop: "7rem",
           paddingBottom: "2.5rem",
           position: "relative",
@@ -538,7 +538,7 @@ export default function LandDetailClient({ land, settings, related }) {
             height: "500px",
             borderRadius: "50%",
             background:
-              "radial-gradient(circle, rgb(164 55 149 / 0.08) 0%, transparent 65%)",
+              "radial-gradient(circle, rgb(89 148 250 / 0.08) 0%, transparent 65%)",
             pointerEvents: "none",
           }}
         />
@@ -1048,9 +1048,9 @@ export default function LandDetailClient({ land, settings, related }) {
                 <div
                   style={{
                     background:
-                      "linear-gradient(135deg, rgb(164 55 149 / 0.06), rgb(164 55 149 / 0.02))",
+                      "linear-gradient(135deg, rgb(89 148 250 / 0.06), rgb(89 148 250 / 0.02))",
                     borderRadius: "var(--radius-lg)",
-                    border: "1px solid rgb(164 55 149 / 0.2)",
+                    border: "1px solid rgb(89 148 250 / 0.2)",
                     padding: "1.75rem",
                     marginBottom: "1.5rem",
                   }}

@@ -157,7 +157,7 @@ function ImageUpload({ label, value, onChange, folder = "blog" }) {
         onClick={() => ref.current?.click()}
         onDragOver={(e) => {
           e.preventDefault();
-          e.currentTarget.style.borderColor = "var(--color-primary, #FF6B6B)";
+          e.currentTarget.style.borderColor = "var(--color-primary, #5994FA)";
         }}
         onDragLeave={(e) => {
           e.currentTarget.style.borderColor = "#CBD5E1";
@@ -211,7 +211,7 @@ function ImageUpload({ label, value, onChange, folder = "blog" }) {
               <Loader2
                 size={24}
                 style={{
-                  color: "var(--color-primary, #FF6B6B)",
+                  color: "var(--color-primary, #5994FA)",
                   animation: "spin 1s linear infinite",
                   margin: "0 auto",
                 }}
@@ -530,13 +530,13 @@ function RichEditor({ value, onChange }) {
         .ProseMirror p.is-editor-empty:first-child::before { content: attr(data-placeholder); color: #94A3B8; pointer-events: none; float: left; height: 0; }
         .ProseMirror h2 { font-size: 1.375rem; font-weight: 800; margin: 1.5rem 0 0.75rem; color: #0F172A; }
         .ProseMirror h3 { font-size: 1.125rem; font-weight: 700; margin: 1.25rem 0 0.5rem; color: #0F172A; }
-        .ProseMirror blockquote { border-left: 3px solid #FF6B6B; padding-left: 1rem; color: #475569; font-style: italic; margin: 1rem 0; }
+        .ProseMirror blockquote { border-left: 3px solid #5994FA; padding-left: 1rem; color: #475569; font-style: italic; margin: 1rem 0; }
         .ProseMirror code { background: #F1F5F9; padding: 0.15rem 0.4rem; border-radius: 0.25rem; font-size: 0.875em; }
         .ProseMirror ul { list-style: disc; padding-left: 1.5rem; }
         .ProseMirror ol { list-style: decimal; padding-left: 1.5rem; }
         .ProseMirror img { max-width: 100%; border-radius: 0.5rem; margin: 0.75rem 0; }
         .ProseMirror hr { border: none; border-top: 1px solid #E2E8F0; margin: 1.5rem 0; }
-        .ProseMirror a { color: #FF6B6B; text-decoration: underline; }
+        .ProseMirror a { color: #5994FA; text-decoration: underline; }
         @keyframes spin { to { transform: rotate(360deg); } }
       `}</style>
     </div>
@@ -762,7 +762,7 @@ function CategoriesModal({ categories, onClose, onRefresh }) {
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-            <Tag size={18} style={{ color: "var(--color-primary, #FF6B6B)" }} />
+            <Tag size={18} style={{ color: "var(--color-primary, #5994FA)" }} />
             <h2
               style={{
                 fontFamily: "var(--font-heading)",
@@ -840,7 +840,7 @@ function CategoriesModal({ categories, onClose, onRefresh }) {
                   padding: "0.625rem 1.125rem",
                   borderRadius: "var(--radius, 0.625rem)",
                   border: "none",
-                  background: saving || !name.trim() ? "#E2E8F0" : "#FF6B6B",
+                  background: saving || !name.trim() ? "#E2E8F0" : "#5994FA",
                   color: saving || !name.trim() ? "#94A3B8" : "white",
                   fontFamily: "var(--font-heading)",
                   fontWeight: 600,
@@ -907,9 +907,9 @@ function CategoriesModal({ categories, onClose, onRefresh }) {
                     gap: "0.625rem",
                     padding: "0.625rem 0.875rem",
                     borderRadius: "var(--radius, 0.625rem)",
-                    border: `1px solid ${isEditing ? "#FF6B6B" : "#E2E8F0"}`,
+                    border: `1px solid ${isEditing ? "#5994FA" : "#E2E8F0"}`,
                     background: isEditing
-                      ? "rgba(255,107,107,0.03)"
+                      ? "rgba(89, 148, 250,0.03)"
                       : "#F8FAFC",
                     transition: "border-color 150ms",
                   }}
@@ -928,7 +928,7 @@ function CategoriesModal({ categories, onClose, onRefresh }) {
                           flex: 1,
                           padding: "0.25rem 0.5rem",
                           borderRadius: "0.375rem",
-                          border: "1px solid #FF6B6B",
+                          border: "1px solid #5994FA",
                           fontSize: "0.875rem",
                           outline: "none",
                           color: "var(--color-text, #0F172A)",
@@ -1178,7 +1178,7 @@ function CategoriesModal({ categories, onClose, onRefresh }) {
                 padding: "0.6875rem",
                 borderRadius: "0.625rem",
                 border: "none",
-                background: "linear-gradient(135deg, #FF6B6B 0%, #E85555 100%)",
+                background: "linear-gradient(135deg, #5994FA 0%, #2F6FE0 100%)",
                 color: "white",
                 fontFamily: "Plus Jakarta Sans, sans-serif",
                 fontWeight: 700,
@@ -1333,7 +1333,7 @@ function PostForm({ post, categories, onSave, onCancel }) {
           >
             <FileText
               size={18}
-              style={{ color: "var(--color-primary, #FF6B6B)" }}
+              style={{ color: "var(--color-primary, #5994FA)" }}
             />
             <h2
               style={{
@@ -1446,9 +1446,9 @@ function PostForm({ post, categories, onSave, onCancel }) {
                   padding: "0.875rem 1.25rem",
                   border: "none",
                   borderBottom:
-                    tab === t ? "2px solid #FF6B6B" : "2px solid transparent",
+                    tab === t ? "2px solid #5994FA" : "2px solid transparent",
                   background: "none",
-                  color: tab === t ? "#FF6B6B" : "#64748B",
+                  color: tab === t ? "#5994FA" : "#64748B",
                   fontFamily: "var(--font-heading)",
                   fontWeight: 600,
                   fontSize: "0.875rem",
@@ -1743,8 +1743,8 @@ function PostForm({ post, categories, onSave, onCancel }) {
                   borderRadius: "var(--radius, 0.625rem)",
                   border: "none",
                   background: saving
-                    ? "rgba(255,107,107,0.5)"
-                    : "linear-gradient(135deg, #FF6B6B 0%, #E85555 100%)",
+                    ? "rgba(89, 148, 250,0.5)"
+                    : "linear-gradient(135deg, #5994FA 0%, #2F6FE0 100%)",
                   color: "white",
                   fontFamily: "var(--font-heading)",
                   fontWeight: 700,
@@ -1755,7 +1755,7 @@ function PostForm({ post, categories, onSave, onCancel }) {
                   gap: "0.5rem",
                   boxShadow: saving
                     ? "none"
-                    : "0 4px 12px rgba(255,107,107,0.3)",
+                    : "0 4px 12px rgba(89, 148, 250,0.3)",
                 }}
               >
                 {saving ? (
@@ -1896,7 +1896,7 @@ export default function AdminBlogPage() {
             >
               <BookOpen
                 size={20}
-                style={{ color: "var(--color-primary, #FF6B6B)" }}
+                style={{ color: "var(--color-primary, #5994FA)" }}
               />
               <h1
                 style={{
@@ -1962,13 +1962,13 @@ export default function AdminBlogPage() {
                 padding: "0.625rem 1.25rem",
                 borderRadius: "var(--radius, 0.625rem)",
                 border: "none",
-                background: "linear-gradient(135deg, #FF6B6B 0%, #E85555 100%)",
+                background: "linear-gradient(135deg, #5994FA 0%, #2F6FE0 100%)",
                 color: "white",
                 fontFamily: "var(--font-heading)",
                 fontWeight: 700,
                 fontSize: "0.875rem",
                 cursor: "pointer",
-                boxShadow: "0 4px 12px rgba(255,107,107,0.3)",
+                boxShadow: "0 4px 12px rgba(89, 148, 250,0.3)",
               }}
             >
               <Plus size={16} /> New Post
@@ -2083,7 +2083,7 @@ export default function AdminBlogPage() {
               <Loader2
                 size={28}
                 style={{
-                  color: "var(--color-primary, #FF6B6B)",
+                  color: "var(--color-primary, #5994FA)",
                   animation: "spin 1s linear infinite",
                   margin: "0 auto",
                 }}
@@ -2111,7 +2111,7 @@ export default function AdminBlogPage() {
                   padding: "0.625rem 1.25rem",
                   borderRadius: "var(--radius, 0.625rem)",
                   border: "none",
-                  background: "var(--color-primary, #FF6B6B)",
+                  background: "var(--color-primary, #5994FA)",
                   color: "white",
                   fontFamily: "var(--font-heading)",
                   fontWeight: 600,

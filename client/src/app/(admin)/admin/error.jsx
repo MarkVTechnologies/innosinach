@@ -62,7 +62,7 @@ export default function AdminError({ error, reset }) {
           display: "inline-flex",
           alignItems: "center",
           gap: "0.5rem",
-          background: "var(--color-primary, #a43795)",
+          background: "var(--color-primary, #5994fa)",
           color: "#ffffff",
           border: "none",
           borderRadius: "var(--radius, 0.625rem)",

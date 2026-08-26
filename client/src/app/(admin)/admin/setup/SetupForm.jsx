@@ -32,8 +32,8 @@ function PasswordStrength({ password }) {
     pct === 0   ? "rgba(255,255,255,0.1)" :
     pct <= 25   ? "#EF4444" :
     pct <= 50   ? "#F59E0B" :
-    pct <= 75   ? "#38BDF8" :
-                  "var(--color-primary, #a43795)";
+    pct <= 75   ? "#5994FA" :
+                  "var(--color-primary, #5994fa)";
   return (
     <div style={{ marginTop: "0.75rem" }}>
       <div style={{ height: "4px", borderRadius: "9999px", background: "rgba(255,255,255,0.08)", marginBottom: "0.75rem", overflow: "hidden" }}>
@@ -44,7 +44,7 @@ function PasswordStrength({ password }) {
           const ok = r.test(password);
           return (
             <div key={r.id} style={{ display: "flex", alignItems: "center", gap: "0.375rem" }}>
-              <CheckCircle size={11} style={{ color: ok ? "var(--color-primary, #a43795)" : "rgba(255,255,255,0.2)", flexShrink: 0, transition: "color 200ms" }} />
+              <CheckCircle size={11} style={{ color: ok ? "var(--color-primary, #5994fa)" : "rgba(255,255,255,0.2)", flexShrink: 0, transition: "color 200ms" }} />
               <span style={{ fontSize: "0.7rem", color: ok ? "rgba(255,255,255,0.6)" : "rgba(255,255,255,0.25)", transition: "color 200ms" }}>
                 {r.label}
               </span>
@@ -149,8 +149,8 @@ export default function SetupForm() {
 
   if (checking || authLoading) {
     return (
-      <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "linear-gradient(135deg, #060B14 0%, #0F172A 100%)" }}>
-        <Loader2 size={32} style={{ color: "var(--color-primary, #a43795)", animation: "spin 1s linear infinite" }} />
+      <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "linear-gradient(135deg, #080D2E 0%, #0F172A 100%)" }}>
+        <Loader2 size={32} style={{ color: "var(--color-primary, #5994fa)", animation: "spin 1s linear infinite" }} />
         <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
       </div>
     );
@@ -163,7 +163,7 @@ export default function SetupForm() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        background: "linear-gradient(135deg, #060B14 0%, #0F172A 60%, #1E2D4A 100%)",
+        background: "linear-gradient(135deg, #080D2E 0%, #0F172A 60%, #1F3086 100%)",
         padding: "2rem",
         position: "relative",
         overflow: "hidden",
@@ -171,7 +171,7 @@ export default function SetupForm() {
       }}
     >
       {/* Background glow — uses theme primary */}
-      <div style={{ position: "absolute", top: "-20%", right: "-5%", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, color-mix(in srgb, var(--color-primary, #a43795) 7%, transparent) 0%, transparent 65%)", pointerEvents: "none" }} />
+      <div style={{ position: "absolute", top: "-20%", right: "-5%", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, color-mix(in srgb, var(--color-primary, #5994fa) 7%, transparent) 0%, transparent 65%)", pointerEvents: "none" }} />
       <div style={{ position: "absolute", inset: 0, opacity: 0.02, backgroundImage: "radial-gradient(white 1.5px, transparent 1.5px)", backgroundSize: "28px 28px", pointerEvents: "none" }} />
 
       <div style={{ width: "100%", maxWidth: "480px", position: "relative" }}>
@@ -179,8 +179,8 @@ export default function SetupForm() {
         {/* ── Success state ── */}
         {done && (
           <div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "1.5rem", padding: "3rem 2.5rem", backdropFilter: "blur(20px)", textAlign: "center" }}>
-            <div style={{ width: "5rem", height: "5rem", borderRadius: "50%", background: "color-mix(in srgb, var(--color-primary, #a43795) 15%, transparent)", border: "2px solid color-mix(in srgb, var(--color-primary, #a43795) 40%, transparent)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 1.5rem" }}>
-              <CheckCircle size={36} style={{ color: "var(--color-primary, #a43795)" }} />
+            <div style={{ width: "5rem", height: "5rem", borderRadius: "50%", background: "color-mix(in srgb, var(--color-primary, #5994fa) 15%, transparent)", border: "2px solid color-mix(in srgb, var(--color-primary, #5994fa) 40%, transparent)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 1.5rem" }}>
+              <CheckCircle size={36} style={{ color: "var(--color-primary, #5994fa)" }} />
             </div>
             <h2 style={{ fontFamily: "Plus Jakarta Sans, sans-serif", fontWeight: 800, fontSize: "1.625rem", color: "white", marginBottom: "0.75rem", letterSpacing: "-0.02em" }}>
               You&apos;re all set!
@@ -190,7 +190,7 @@ export default function SetupForm() {
             </p>
             <button
               onClick={() => router.replace("/admin")}
-              style={{ width: "100%", padding: "0.9rem 1.5rem", borderRadius: "0.75rem", border: "none", background: "var(--color-primary, #a43795)", color: "#ffffff", fontFamily: "Plus Jakarta Sans, sans-serif", fontWeight: 700, fontSize: "0.9375rem", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: "0.5rem", boxShadow: "var(--shadow-coral, 0 8px 24px rgba(0,0,0,0.25))" }}
+              style={{ width: "100%", padding: "0.9rem 1.5rem", borderRadius: "0.75rem", border: "none", background: "var(--color-primary, #5994fa)", color: "#ffffff", fontFamily: "Plus Jakarta Sans, sans-serif", fontWeight: 700, fontSize: "0.9375rem", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: "0.5rem", boxShadow: "var(--shadow-coral, 0 8px 24px rgba(0,0,0,0.25))" }}
             >
               Go to Dashboard <ArrowRight size={17} />
             </button>
@@ -204,7 +204,7 @@ export default function SetupForm() {
             {/* Header */}
             <div style={{ textAlign: "center", marginBottom: "2rem" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", justifyContent: "center", marginBottom: "1.25rem" }}>
-                <div style={{ width: "2.75rem", height: "2.75rem", borderRadius: "0.75rem", background: "var(--color-primary, #a43795)", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "var(--shadow-coral, 0 8px 24px rgba(0,0,0,0.25))" }}>
+                <div style={{ width: "2.75rem", height: "2.75rem", borderRadius: "0.75rem", background: "var(--color-primary, #5994fa)", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "var(--shadow-coral, 0 8px 24px rgba(0,0,0,0.25))" }}>
                   <Building2 size={22} style={{ color: "#ffffff" }} />
                 </div>
                 <h1 style={{ fontFamily: "Plus Jakarta Sans, sans-serif", fontWeight: 800, fontSize: "1.5rem", color: "white", margin: 0, letterSpacing: "-0.02em" }}>
@@ -217,9 +217,9 @@ export default function SetupForm() {
             </div>
 
             {/* First-run badge */}
-            <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", justifyContent: "center", padding: "0.5rem 1rem", borderRadius: "9999px", background: "rgba(56,189,248,0.08)", border: "1px solid rgba(56,189,248,0.2)", marginBottom: "1.5rem" }}>
-              <ShieldCheck size={13} style={{ color: "#38BDF8" }} />
-              <span style={{ color: "#38BDF8", fontSize: "0.75rem", fontWeight: 600, fontFamily: "Plus Jakarta Sans, sans-serif" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", justifyContent: "center", padding: "0.5rem 1rem", borderRadius: "9999px", background: "rgba(89, 148, 250,0.08)", border: "1px solid rgba(89, 148, 250,0.2)", marginBottom: "1.5rem" }}>
+              <ShieldCheck size={13} style={{ color: "#5994FA" }} />
+              <span style={{ color: "#5994FA", fontSize: "0.75rem", fontWeight: 600, fontFamily: "Plus Jakarta Sans, sans-serif" }}>
                 First-run setup — this page locks after account creation
               </span>
             </div>
@@ -257,7 +257,7 @@ export default function SetupForm() {
                   name="name" type="text" value={form.name} onChange={handleChange}
                   placeholder="e.g. Chukwuemeka Adeyemi"
                   autoComplete="name" disabled={loading} style={inputStyle}
-                  onFocus={(e) => { e.target.style.borderColor = "var(--color-primary, #a43795)"; e.target.style.background = "rgba(255,255,255,0.08)"; }}
+                  onFocus={(e) => { e.target.style.borderColor = "var(--color-primary, #5994fa)"; e.target.style.background = "rgba(255,255,255,0.08)"; }}
                   onBlur={(e)  => { e.target.style.borderColor = "rgba(255,255,255,0.12)"; e.target.style.background = "rgba(255,255,255,0.06)"; }}
                 />
               </div>
@@ -269,7 +269,7 @@ export default function SetupForm() {
                   name="email" type="email" value={form.email} onChange={handleChange}
                   placeholder="you@yourcompany.com"
                   autoComplete="email" disabled={loading} style={inputStyle}
-                  onFocus={(e) => { e.target.style.borderColor = "var(--color-primary, #a43795)"; e.target.style.background = "rgba(255,255,255,0.08)"; }}
+                  onFocus={(e) => { e.target.style.borderColor = "var(--color-primary, #5994fa)"; e.target.style.background = "rgba(255,255,255,0.08)"; }}
                   onBlur={(e)  => { e.target.style.borderColor = "rgba(255,255,255,0.12)"; e.target.style.background = "rgba(255,255,255,0.06)"; }}
                 />
               </div>
@@ -282,7 +282,7 @@ export default function SetupForm() {
                     name="password" type={showPass ? "text" : "password"} value={form.password} onChange={handleChange}
                     placeholder="Create a strong password"
                     autoComplete="new-password" disabled={loading} style={{ ...inputStyle, paddingRight: "3rem" }}
-                    onFocus={(e) => { e.target.style.borderColor = "var(--color-primary, #a43795)"; e.target.style.background = "rgba(255,255,255,0.08)"; }}
+                    onFocus={(e) => { e.target.style.borderColor = "var(--color-primary, #5994fa)"; e.target.style.background = "rgba(255,255,255,0.08)"; }}
                     onBlur={(e)  => { e.target.style.borderColor = "rgba(255,255,255,0.12)"; e.target.style.background = "rgba(255,255,255,0.06)"; }}
                   />
                   <button type="button" onClick={() => setShowPass((p) => !p)}
@@ -302,7 +302,7 @@ export default function SetupForm() {
                     placeholder="Repeat your password"
                     autoComplete="new-password" disabled={loading}
                     style={{ ...inputStyle, paddingRight: "3rem", borderColor: form.confirm_password && form.confirm_password !== form.password ? "rgba(239,68,68,0.5)" : "rgba(255,255,255,0.12)" }}
-                    onFocus={(e) => { e.target.style.borderColor = "var(--color-primary, #a43795)"; e.target.style.background = "rgba(255,255,255,0.08)"; }}
+                    onFocus={(e) => { e.target.style.borderColor = "var(--color-primary, #5994fa)"; e.target.style.background = "rgba(255,255,255,0.08)"; }}
                     onBlur={(e) => {
                       const mismatch = form.confirm_password && form.confirm_password !== form.password;
                       e.target.style.borderColor = mismatch ? "rgba(239,68,68,0.5)" : "rgba(255,255,255,0.12)";
@@ -318,7 +318,7 @@ export default function SetupForm() {
                   <p style={{ color: "#FCA5A5", fontSize: "0.75rem", marginTop: "0.375rem" }}>Passwords do not match</p>
                 )}
                 {form.confirm_password && form.confirm_password === form.password && (
-                  <p style={{ color: "var(--color-primary, #a43795)", fontSize: "0.75rem", marginTop: "0.375rem", display: "flex", alignItems: "center", gap: "0.25rem" }}>
+                  <p style={{ color: "var(--color-primary, #5994fa)", fontSize: "0.75rem", marginTop: "0.375rem", display: "flex", alignItems: "center", gap: "0.25rem" }}>
                     <CheckCircle size={11} /> Passwords match
                   </p>
                 )}
@@ -329,7 +329,7 @@ export default function SetupForm() {
                 type="submit" disabled={loading || !canSubmit}
                 style={{
                   width: "100%", padding: "0.9rem 1.5rem", marginTop: "0.5rem", borderRadius: "0.75rem", border: "none",
-                  background: canSubmit && !loading ? "var(--color-primary, #a43795)" : "color-mix(in srgb, var(--color-primary, #a43795) 30%, transparent)",
+                  background: canSubmit && !loading ? "var(--color-primary, #5994fa)" : "color-mix(in srgb, var(--color-primary, #5994fa) 30%, transparent)",
                   color: "#ffffff",
                   fontFamily: "Plus Jakarta Sans, sans-serif", fontWeight: 700, fontSize: "0.9375rem",
                   cursor: canSubmit && !loading ? "pointer" : "not-allowed",
@@ -348,7 +348,7 @@ export default function SetupForm() {
 
             <p style={{ color: "rgba(255,255,255,0.2)", fontSize: "0.75rem", textAlign: "center", marginTop: "1.5rem" }}>
               Already have an account?{" "}
-              <a href="/admin/login" style={{ color: "var(--color-primary, #a43795)", textDecoration: "none", opacity: 0.85 }}>Sign in</a>
+              <a href="/admin/login" style={{ color: "var(--color-primary, #5994fa)", textDecoration: "none", opacity: 0.85 }}>Sign in</a>
             </p>
           </div>
         )}

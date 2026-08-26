@@ -25,7 +25,7 @@ export default function AdminShell({ children, newEnquiries = 0 }) {
         justifyContent: "center",
         flexDirection: "column",
         gap: "1rem",
-        background: "linear-gradient(135deg, var(--color-secondary-dark, #110619) 0%, var(--color-secondary, #1a0a2e) 100%)",
+        background: "linear-gradient(135deg, var(--color-secondary-dark, #0D1642) 0%, var(--color-secondary, #17256b) 100%)",
       }}
     >
       <div
@@ -33,7 +33,7 @@ export default function AdminShell({ children, newEnquiries = 0 }) {
           width: "2.75rem",
           height: "2.75rem",
           borderRadius: "0.75rem",
-          background: "var(--color-primary, #a43795)",
+          background: "var(--color-primary, #5994fa)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",

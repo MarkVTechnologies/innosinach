@@ -67,7 +67,7 @@ const S = {
 };
 
 const focus = (e) =>
-  (e.target.style.borderColor = "var(--color-primary, #FF6B6B)");
+  (e.target.style.borderColor = "var(--color-primary, #5994FA)");
 const blur = (e) =>
   (e.target.style.borderColor = "var(--color-border, #E2E8F0)");
 
@@ -75,7 +75,7 @@ const blur = (e) =>
 function Accordion({
   icon: Icon,
   title,
-  color = "#FF6B6B",
+  color = "#5994FA",
   children,
   defaultOpen = false,
 }) {
@@ -558,7 +558,7 @@ export default function AdminAboutPage() {
             >
               <Info
                 size={20}
-                style={{ color: "var(--color-primary, #FF6B6B)" }}
+                style={{ color: "var(--color-primary, #5994FA)" }}
               />
               <h1
                 style={{
@@ -614,7 +614,7 @@ export default function AdminAboutPage() {
                 padding: "0.5rem 1.25rem",
                 borderRadius: "var(--radius, 0.625rem)",
                 border: "none",
-                background: "linear-gradient(135deg, #FF6B6B, #E85555)",
+                background: "linear-gradient(135deg, #5994FA, #2F6FE0)",
                 color: "white",
                 fontFamily: "Plus Jakarta Sans, sans-serif",
                 fontWeight: 700,
@@ -644,7 +644,7 @@ export default function AdminAboutPage() {
         <Accordion
           icon={Info}
           title="Hero / Page Header"
-          color="#FF6B6B"
+          color="#5994FA"
           defaultOpen
         >
           <Field
@@ -663,7 +663,7 @@ export default function AdminAboutPage() {
         </Accordion>
 
         {/* ── Stats ── */}
-        <Accordion icon={BarChart2} title="Key Stats / Numbers" color="#38BDF8">
+        <Accordion icon={BarChart2} title="Key Stats / Numbers" color="#5994FA">
           <p
             style={{
               fontSize: "0.8125rem",
@@ -841,7 +841,7 @@ export default function AdminAboutPage() {
               padding: "0.75rem 2rem",
               borderRadius: "var(--radius, 0.75rem)",
               border: "none",
-              background: "linear-gradient(135deg, #FF6B6B, #E85555)",
+              background: "linear-gradient(135deg, #5994FA, #2F6FE0)",
               color: "white",
               fontFamily: "Plus Jakarta Sans, sans-serif",
               fontWeight: 700,

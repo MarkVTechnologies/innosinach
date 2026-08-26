@@ -13,7 +13,7 @@ export default function PageHero({
     <section
       style={{
         background:
-          "linear-gradient(135deg, var(--color-secondary-dark) 0%, var(--color-secondary) 60%, #1E2D4A 100%)",
+          "linear-gradient(135deg, var(--color-secondary-dark) 0%, var(--color-secondary) 60%, #1F3086 100%)",
         paddingTop: "7rem",
         paddingBottom: "3.5rem",
         position: "relative",
@@ -30,7 +30,7 @@ export default function PageHero({
           height: "500px",
           borderRadius: "50%",
           background:
-            "radial-gradient(circle, rgba(255,107,107,0.1) 0%, transparent 65%)",
+            "radial-gradient(circle, rgba(89, 148, 250,0.1) 0%, transparent 65%)",
           pointerEvents: "none",
         }}
       />

@@ -788,7 +788,7 @@ function PropertyListItem({ land }) {
           height: "72px",
           borderRadius: "var(--radius)",
           background:
-            "linear-gradient(135deg, var(--color-secondary) 0%, #1E2D4A 100%)",
+            "linear-gradient(135deg, var(--color-secondary) 0%, #1F3086 100%)",
           flexShrink: 0,
         }}
       />

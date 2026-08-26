@@ -75,7 +75,7 @@ const S = {
 };
 
 const focus = (e) =>
-  (e.target.style.borderColor = "var(--color-primary, #FF6B6B)");
+  (e.target.style.borderColor = "var(--color-primary, #5994FA)");
 const blur = (e) =>
   (e.target.style.borderColor = "var(--color-border, #E2E8F0)");
 
@@ -412,7 +412,7 @@ function PopularAreasSection() {
           >
             <MapPin
               size={18}
-              style={{ color: "var(--color-primary, #FF6B6B)" }}
+              style={{ color: "var(--color-primary, #5994FA)" }}
             />
             <h2
               style={{
@@ -460,7 +460,7 @@ function PopularAreasSection() {
                 display: "flex",
                 alignItems: "center",
                 gap: "0.4rem",
-                background: "var(--color-primary, #FF6B6B)",
+                background: "var(--color-primary, #5994FA)",
                 color: "white",
                 border: "none",
                 borderRadius: "var(--radius, 0.625rem)",
@@ -500,7 +500,7 @@ function PopularAreasSection() {
               size={20}
               style={{
                 animation: "spin 1s linear infinite",
-                color: "var(--color-primary, #FF6B6B)",
+                color: "var(--color-primary, #5994FA)",
               }}
             />
           </div>
@@ -767,7 +767,7 @@ function PopularAreasSection() {
                   height: "1.25rem",
                   borderRadius: "999px",
                   border: "none",
-                  background: form.is_active ? "#FF6B6B" : "#E2E8F0",
+                  background: form.is_active ? "#5994FA" : "#E2E8F0",
                   cursor: "pointer",
                   position: "relative",
                   transition: "background 200ms",
@@ -832,7 +832,7 @@ function PopularAreasSection() {
                   padding: "0.625rem",
                   borderRadius: "var(--radius, 0.625rem)",
                   border: "none",
-                  background: "var(--color-primary, #FF6B6B)",
+                  background: "var(--color-primary, #5994FA)",
                   color: "white",
                   fontFamily: "Plus Jakarta Sans, sans-serif",
                   fontWeight: 700,
@@ -1004,7 +1004,7 @@ function PartnersSection() {
           >
             <Building2
               size={18}
-              style={{ color: "var(--color-primary, #FF6B6B)" }}
+              style={{ color: "var(--color-primary, #5994FA)" }}
             />
             <h2
               style={{
@@ -1052,7 +1052,7 @@ function PartnersSection() {
                 display: "flex",
                 alignItems: "center",
                 gap: "0.4rem",
-                background: "var(--color-primary, #FF6B6B)",
+                background: "var(--color-primary, #5994FA)",
                 color: "white",
                 border: "none",
                 borderRadius: "var(--radius, 0.625rem)",
@@ -1091,7 +1091,7 @@ function PartnersSection() {
               size={20}
               style={{
                 animation: "spin 1s linear infinite",
-                color: "var(--color-primary, #FF6B6B)",
+                color: "var(--color-primary, #5994FA)",
               }}
             />
           </div>
@@ -1355,7 +1355,7 @@ function PartnersSection() {
                   height: "1.25rem",
                   borderRadius: "999px",
                   border: "none",
-                  background: form.is_active ? "#FF6B6B" : "#E2E8F0",
+                  background: form.is_active ? "#5994FA" : "#E2E8F0",
                   cursor: "pointer",
                   position: "relative",
                   transition: "background 200ms",
@@ -1420,7 +1420,7 @@ function PartnersSection() {
                   padding: "0.625rem",
                   borderRadius: "var(--radius, 0.625rem)",
                   border: "none",
-                  background: "var(--color-primary, #FF6B6B)",
+                  background: "var(--color-primary, #5994FA)",
                   color: "white",
                   fontFamily: "Plus Jakarta Sans, sans-serif",
                   fontWeight: 700,

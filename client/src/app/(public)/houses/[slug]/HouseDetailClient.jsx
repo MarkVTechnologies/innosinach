@@ -502,7 +502,7 @@ export default function HouseDetailClient({ house, settings, related }) {
       <section
         style={{
           background:
-            "linear-gradient(135deg, var(--color-secondary-dark) 0%, var(--color-secondary) 60%, #1E2D4A 100%)",
+            "linear-gradient(135deg, var(--color-secondary-dark) 0%, var(--color-secondary) 60%, #1F3086 100%)",
           paddingTop: "7rem",
           paddingBottom: "2.5rem",
           position: "relative",
@@ -518,7 +518,7 @@ export default function HouseDetailClient({ house, settings, related }) {
             height: "500px",
             borderRadius: "50%",
             background:
-              "radial-gradient(circle, rgb(164 55 149 / 0.08) 0%, transparent 65%)",
+              "radial-gradient(circle, rgb(89 148 250 / 0.08) 0%, transparent 65%)",
             pointerEvents: "none",
           }}
         />
@@ -604,7 +604,7 @@ export default function HouseDetailClient({ house, settings, related }) {
                       fontWeight: 600,
                       padding: "0.25rem 0.75rem",
                       borderRadius: "var(--radius-full)",
-                      background: "rgb(164 55 149 / 0.12)",
+                      background: "rgb(89 148 250 / 0.12)",
                       color: "var(--color-primary)",
                       fontFamily: "var(--font-heading)",
                     }}

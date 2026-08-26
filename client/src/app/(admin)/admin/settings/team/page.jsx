@@ -27,15 +27,15 @@ import { useAuth } from "@/context/useAuth";
 const ROLES = {
   super_admin: {
     label: "Super Admin",
-    color: "#FF6B6B",
-    bg: "rgba(255,107,107,0.12)",
+    color: "#5994FA",
+    bg: "rgba(89, 148, 250,0.12)",
     icon: ShieldCheck,
     desc: "Full access to everything",
   },
   admin: {
     label: "Admin",
-    color: "#38BDF8",
-    bg: "rgba(56,189,248,0.12)",
+    color: "#5994FA",
+    bg: "rgba(89, 148, 250,0.12)",
     icon: Shield,
     desc: "Full access except team management",
   },
@@ -266,7 +266,7 @@ function MemberForm({ initial, onSave, onClose, isSelf }) {
           placeholder="e.g. Amara Okafor"
           style={inputBase}
           onFocus={(e) => {
-            e.target.style.borderColor = "#FF6B6B";
+            e.target.style.borderColor = "#5994FA";
             e.target.style.background = "white";
           }}
           onBlur={(e) => {
@@ -296,7 +296,7 @@ function MemberForm({ initial, onSave, onClose, isSelf }) {
           placeholder="staff@yourcompany.com"
           style={inputBase}
           onFocus={(e) => {
-            e.target.style.borderColor = "#FF6B6B";
+            e.target.style.borderColor = "#5994FA";
             e.target.style.background = "white";
           }}
           onBlur={(e) => {
@@ -326,7 +326,7 @@ function MemberForm({ initial, onSave, onClose, isSelf }) {
             onChange={(e) => setForm((p) => ({ ...p, role: e.target.value }))}
             style={{ ...inputBase, cursor: "pointer" }}
             onFocus={(e) => {
-              e.target.style.borderColor = "#FF6B6B";
+              e.target.style.borderColor = "#5994FA";
               e.target.style.background = "white";
             }}
             onBlur={(e) => {
@@ -368,7 +368,7 @@ function MemberForm({ initial, onSave, onClose, isSelf }) {
               placeholder="Minimum 8 characters"
               style={{ ...inputBase, paddingRight: "2.75rem" }}
               onFocus={(e) => {
-                e.target.style.borderColor = "#FF6B6B";
+                e.target.style.borderColor = "#5994FA";
                 e.target.style.background = "white";
               }}
               onBlur={(e) => {
@@ -450,7 +450,7 @@ function MemberForm({ initial, onSave, onClose, isSelf }) {
                     : "#E2E8F0",
               }}
               onFocus={(e) => {
-                e.target.style.borderColor = "#FF6B6B";
+                e.target.style.borderColor = "#5994FA";
                 e.target.style.background = "white";
               }}
               onBlur={(e) => {
@@ -495,8 +495,8 @@ function MemberForm({ initial, onSave, onClose, isSelf }) {
             border: "none",
             background:
               canSubmit && !loading
-                ? "linear-gradient(135deg, #FF6B6B 0%, #E85555 100%)"
-                : "rgba(255,107,107,0.3)",
+                ? "linear-gradient(135deg, #5994FA 0%, #2F6FE0 100%)"
+                : "rgba(89, 148, 250,0.3)",
             color: "white",
             fontFamily: "Plus Jakarta Sans, sans-serif",
             fontWeight: 700,
@@ -603,7 +603,7 @@ function ChangePasswordForm({ member, isSelf, onClose }) {
             style={inputBase}
             placeholder="Your current password"
             onFocus={(e) => {
-              e.target.style.borderColor = "#FF6B6B";
+              e.target.style.borderColor = "#5994FA";
               e.target.style.background = "white";
             }}
             onBlur={(e) => {
@@ -636,7 +636,7 @@ function ChangePasswordForm({ member, isSelf, onClose }) {
             style={{ ...inputBase, paddingRight: "2.75rem" }}
             placeholder="Min 8 chars, uppercase, number"
             onFocus={(e) => {
-              e.target.style.borderColor = "#FF6B6B";
+              e.target.style.borderColor = "#5994FA";
               e.target.style.background = "white";
             }}
             onBlur={(e) => {
@@ -684,7 +684,7 @@ function ChangePasswordForm({ member, isSelf, onClose }) {
           style={inputBase}
           placeholder="Repeat new password"
           onFocus={(e) => {
-            e.target.style.borderColor = "#FF6B6B";
+            e.target.style.borderColor = "#5994FA";
             e.target.style.background = "white";
           }}
           onBlur={(e) => {
@@ -720,7 +720,7 @@ function ChangePasswordForm({ member, isSelf, onClose }) {
             padding: "0.6875rem",
             borderRadius: "0.625rem",
             border: "none",
-            background: "linear-gradient(135deg, #FF6B6B 0%, #E85555 100%)",
+            background: "linear-gradient(135deg, #5994FA 0%, #2F6FE0 100%)",
             color: "white",
             fontFamily: "Plus Jakarta Sans, sans-serif",
             fontWeight: 700,
@@ -839,7 +839,7 @@ export default function TeamPage() {
                 marginBottom: "0.25rem",
               }}
             >
-              <Users size={20} style={{ color: "#FF6B6B" }} />
+              <Users size={20} style={{ color: "#5994FA" }} />
               <h1
                 style={{
                   fontFamily: "Plus Jakarta Sans, sans-serif",
@@ -866,13 +866,13 @@ export default function TeamPage() {
                 padding: "0.6875rem 1.25rem",
                 borderRadius: "0.75rem",
                 border: "none",
-                background: "linear-gradient(135deg, #FF6B6B 0%, #E85555 100%)",
+                background: "linear-gradient(135deg, #5994FA 0%, #2F6FE0 100%)",
                 color: "white",
                 fontFamily: "Plus Jakarta Sans, sans-serif",
                 fontWeight: 700,
                 fontSize: "0.875rem",
                 cursor: "pointer",
-                boxShadow: "0 4px 12px rgba(255,107,107,0.3)",
+                boxShadow: "0 4px 12px rgba(89, 148, 250,0.3)",
                 flexShrink: 0,
               }}
             >
@@ -936,7 +936,7 @@ export default function TeamPage() {
           >
             <Loader2
               size={24}
-              style={{ color: "#FF6B6B", animation: "spin 1s linear infinite" }}
+              style={{ color: "#5994FA", animation: "spin 1s linear infinite" }}
             />
           </div>
         ) : (
@@ -977,7 +977,7 @@ export default function TeamPage() {
                       height: "2.75rem",
                       borderRadius: "50%",
                       flexShrink: 0,
-                      background: `linear-gradient(135deg, ${ROLES[member.role]?.color || "#FF6B6B"} 0%, #0F172A 100%)`,
+                      background: `linear-gradient(135deg, ${ROLES[member.role]?.color || "#5994FA"} 0%, #0F172A 100%)`,
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -1099,8 +1099,8 @@ export default function TeamPage() {
                           transition: "all 150ms",
                         }}
                         onMouseEnter={(e) => {
-                          e.currentTarget.style.borderColor = "#38BDF8";
-                          e.currentTarget.style.color = "#38BDF8";
+                          e.currentTarget.style.borderColor = "#5994FA";
+                          e.currentTarget.style.color = "#5994FA";
                         }}
                         onMouseLeave={(e) => {
                           e.currentTarget.style.borderColor = "#E2E8F0";
@@ -1125,8 +1125,8 @@ export default function TeamPage() {
                           transition: "all 150ms",
                         }}
                         onMouseEnter={(e) => {
-                          e.currentTarget.style.borderColor = "#FF6B6B";
-                          e.currentTarget.style.color = "#FF6B6B";
+                          e.currentTarget.style.borderColor = "#5994FA";
+                          e.currentTarget.style.color = "#5994FA";
                         }}
                         onMouseLeave={(e) => {
                           e.currentTarget.style.borderColor = "#E2E8F0";
@@ -1292,7 +1292,7 @@ export default function TeamPage() {
                   padding: "0.6875rem",
                   borderRadius: "0.625rem",
                   border: "none",
-                  background: "linear-gradient(135deg, #FF6B6B 0%, #E85555 100%)",
+                  background: "linear-gradient(135deg, #5994FA 0%, #2F6FE0 100%)",
                   color: "white",
                   fontFamily: "Plus Jakarta Sans, sans-serif",
                   fontWeight: 700,

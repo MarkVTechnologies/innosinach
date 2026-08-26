@@ -5,29 +5,29 @@
 
 @theme {
   /* ── Brand Colours ─────────────────────────────── */
-  --color-primary: #a43795; /* Magenta       — buttons, accents   */
-  --color-primary-dark: #7d2a72; /* Deep magenta  — hover state        */
-  --color-primary-light: #c55ab5; /* Light magenta — highlights         */
-  --color-primary-muted: #f2d9ee; /* Soft pink     — selection, tints   */
+  --color-primary: #5994fa; /* Sky blue      — buttons, accents   */
+  --color-primary-dark: #2f6fe0; /* Deep blue     — hover state        */
+  --color-primary-light: #8ab3fc; /* Light blue    — highlights         */
+  --color-primary-muted: #e8f0fe; /* Soft blue     — selection, tints   */
 
-  --color-secondary: #1a0a2e; /* Deep purple   — backgrounds, navs  */
-  --color-secondary-dark: #110619; /* Deeper purple — footer, deep bg    */
-  --color-secondary-mid: #2e1352; /* Mid purple    — cards on dark bg   */
-  --color-secondary-light: #4a1f7c; /* Light purple  — borders on dark bg */
+  --color-secondary: #17256b; /* Deep navy     — backgrounds, navs  */
+  --color-secondary-dark: #0d1642; /* Deeper navy   — footer, deep bg    */
+  --color-secondary-mid: #1f3086; /* Mid navy      — cards on dark bg   */
+  --color-secondary-light: #2c40a3; /* Light navy    — borders on dark bg */
 
-  --color-accent: #e040fb; /* Electric fuchsia — star ratings    */
-  --color-accent-light: #f3b8ff; /* Light fuchsia accent               */
+  --color-accent: #7fb0fd; /* Bright sky blue — star ratings    */
+  --color-accent-light: #c9e0fe; /* Light blue accent               */
 
   /* ── Neutrals ──────────────────────────────────── */
   --color-surface: #ffffff;
-  --color-surface-2: #fdf6fb;
-  --color-surface-3: #f9edf6;
-  --color-border: #ead5e8;
-  --color-border-dark: #d4aacf;
+  --color-surface-2: #f4f8ff;
+  --color-surface-3: #e9f0fe;
+  --color-border: #cfe0fb;
+  --color-border-dark: #a9c6f5;
 
-  --color-text: #1a0a2e; /* Near black with purple undertone   */
-  --color-text-secondary: #5e3a7a; /* Purple-tinted slate                */
-  --color-text-muted: #b891c0; /* Muted lavender — on dark bg        */
+  --color-text: #17256b; /* Near black with navy undertone     */
+  --color-text-secondary: #3d4d80; /* Navy-tinted slate                  */
+  --color-text-muted: #8b96c4; /* Muted blue-gray — on dark bg       */
   --color-text-inverse: #ffffff;
 
   /* ── Status Colours ────────────────────────────── */
@@ -62,7 +62,7 @@
     0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --shadow-xl:
     0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --shadow-glow: 0 0 30px rgb(164 55 149 / 0.3);
+  --shadow-glow: 0 0 30px rgb(89 148 250 / 0.3);
 
   /* ── Transitions ───────────────────────────────── */
   --transition-fast: 150ms ease;
@@ -74,24 +74,24 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 267 64% 11%; /* #1a0a2e */
+    --foreground: 230 65% 25%; /* #17256b */
     --card: 0 0% 100%;
-    --card-foreground: 267 64% 11%;
+    --card-foreground: 230 65% 25%;
     --popover: 0 0% 100%;
-    --popover-foreground: 267 64% 11%;
-    --primary: 308 50% 43%; /* #a43795 — magenta */
-    --primary-foreground: 0 0% 100%; /* white text ON magenta btn */
-    --secondary: 267 64% 11%; /* #1a0a2e — deep dark purple */
-    --secondary-foreground: 0 0% 100%; /* white text on dark purple */
-    --muted: 300 30% 96%;
-    --muted-foreground: 280 30% 37%;
-    --accent: 291 96% 61%; /* #e040fb — electric fuchsia */
-    --accent-foreground: 0 0% 100%; /* white on fuchsia */
+    --popover-foreground: 230 65% 25%;
+    --primary: 218 94% 66%; /* #5994fa — sky blue */
+    --primary-foreground: 0 0% 100%; /* white text ON blue btn */
+    --secondary: 230 65% 25%; /* #17256b — deep navy */
+    --secondary-foreground: 0 0% 100%; /* white text on deep navy */
+    --muted: 220 40% 96%;
+    --muted-foreground: 228 30% 40%;
+    --accent: 217 97% 75%; /* #7fb0fd — bright sky blue */
+    --accent-foreground: 0 0% 100%; /* white on bright blue */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
-    --border: 308 35% 88%;
-    --input: 308 35% 88%;
-    --ring: 308 50% 43%; /* #a43795 focus ring */
+    --border: 220 60% 88%;
+    --input: 220 60% 88%;
+    --ring: 218 94% 66%; /* #5994fa focus ring */
     --radius: 0.625rem;
 
     /* Chart colours */
@@ -103,25 +103,25 @@
   }
 
   .dark {
-    --background: 267 64% 8%;
+    --background: 230 55% 10%;
     --foreground: 0 0% 98%;
-    --card: 267 60% 12%;
+    --card: 230 50% 14%;
     --card-foreground: 0 0% 98%;
-    --popover: 267 60% 12%;
+    --popover: 230 50% 14%;
     --popover-foreground: 0 0% 98%;
-    --primary: 308 50% 43%;
+    --primary: 218 94% 66%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 267 50% 20%;
+    --secondary: 228 45% 22%;
     --secondary-foreground: 0 0% 98%;
-    --muted: 267 50% 20%;
-    --muted-foreground: 300 20% 65%;
-    --accent: 291 96% 61%;
+    --muted: 228 45% 22%;
+    --muted-foreground: 220 25% 70%;
+    --accent: 217 97% 75%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 267 40% 20%;
-    --input: 267 40% 20%;
-    --ring: 308 50% 43%;
+    --border: 228 40% 22%;
+    --input: 228 40% 22%;
+    --ring: 218 94% 66%;
   }
 }
 
@@ -250,7 +250,7 @@
   }
 
   .glass-dark {
-    background: rgb(26 10 46 / 0.85);
+    background: rgb(23 37 107 / 0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgb(255 255 255 / 0.08);
@@ -562,7 +562,7 @@
     inset: 0;
     background: linear-gradient(
       to top,
-      rgb(26 10 46 / 0.78) 0%,
+      rgb(23 37 107 / 0.78) 0%,
       transparent 60%
     );
     pointer-events: none;
@@ -689,8 +689,8 @@
 
 /* Focus ring uses primary color */
 .admin-input:focus {
-  border-color: var(--color-primary, #a43795);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary, #a43795) 20%, transparent);
+  border-color: var(--color-primary, #5994fa);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary, #5994fa) 20%, transparent);
 }
 
 /* ── Textarea ── */
@@ -710,8 +710,8 @@
 }
 
 .admin-textarea:focus {
-  border-color: var(--color-primary, #a43795);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary, #a43795) 20%, transparent);
+  border-color: var(--color-primary, #5994fa);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary, #5994fa) 20%, transparent);
 }
 
 /* ── 2-column grid ── */
@@ -748,7 +748,7 @@
   padding: 0.625rem 1.25rem;
   border-radius: var(--radius, 0.625rem);
   border: none;
-  background: var(--color-primary, #a43795);
+  background: var(--color-primary, #5994fa);
   color: var(--color-text-inverse, #ffffff);
   font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 700;
@@ -760,7 +760,7 @@
 }
 
 .admin-btn-primary:hover {
-  background: var(--color-primary-light, #d4ffaa);
+  background: var(--color-primary-light, #8ab3fc);
   transform: translateY(-1px);
 }
 
@@ -791,9 +791,9 @@
 }
 
 .admin-btn-secondary:hover {
-  border-color: var(--color-secondary, #1a0a2e);
-  background: var(--color-secondary, #1a0a2e);
-  color: var(--color-primary, #a43795);
+  border-color: var(--color-secondary, #17256b);
+  background: var(--color-secondary, #17256b);
+  color: var(--color-primary, #5994fa);
 }
 
 .admin-btn-secondary:disabled {
@@ -839,8 +839,8 @@
 }
 
 .admin-badge-green {
-  background: var(--color-primary-muted, #f2d9ee);
-  color: var(--color-secondary, #1a0a2e);
+  background: var(--color-primary-muted, #e8f0fe);
+  color: var(--color-secondary, #17256b);
 }
 
 .admin-badge-blue {

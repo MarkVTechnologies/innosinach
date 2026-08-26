@@ -8,7 +8,7 @@ export default function AppleIcon() {
     (
       <div
         style={{
-          background: "#1a0a2e",
+          background: "#17256b",
           width: "100%",
           height: "100%",
           display: "flex",
@@ -20,7 +20,7 @@ export default function AppleIcon() {
           style={{
             width: 110,
             height: 110,
-            background: "#a43795",
+            background: "#5994fa",
             borderRadius: 24,
             display: "flex",
             alignItems: "center",
@@ -37,7 +37,7 @@ export default function AppleIcon() {
               letterSpacing: "-3px",
             }}
           >
-            M
+            I
           </span>
         </div>
       </div>

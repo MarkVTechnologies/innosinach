@@ -155,7 +155,7 @@ function EnquiryRow({ enquiry }) {
           width: "2rem",
           height: "2rem",
           borderRadius: "50%",
-          background: "linear-gradient(135deg, #FF6B6B, #0F172A)",
+          background: "linear-gradient(135deg, #5994FA, #0F172A)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -335,7 +335,7 @@ function EnquiryChart({ data, loading }) {
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-            <TrendingUp size={16} style={{ color: "#FF6B6B" }} />
+            <TrendingUp size={16} style={{ color: "#5994FA" }} />
             <h2
               style={{
                 fontFamily: "Plus Jakarta Sans, sans-serif",
@@ -372,7 +372,7 @@ function EnquiryChart({ data, loading }) {
             marginBottom: "1.25rem",
           }}
         >
-          <TrendingUp size={16} style={{ color: "#FF6B6B" }} />
+          <TrendingUp size={16} style={{ color: "#5994FA" }} />
           <h2
             style={{
               fontFamily: "Plus Jakarta Sans, sans-serif",
@@ -420,7 +420,7 @@ function EnquiryChart({ data, loading }) {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: "0.625rem" }}>
-          <TrendingUp size={16} style={{ color: "#FF6B6B" }} />
+          <TrendingUp size={16} style={{ color: "#5994FA" }} />
           <div>
             <h2
               style={{
@@ -484,8 +484,8 @@ function EnquiryChart({ data, loading }) {
           >
             <defs>
               <linearGradient id="coralGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#FF6B6B" />
-                <stop offset="100%" stopColor="#E85555" stopOpacity={0.85} />
+                <stop offset="0%" stopColor="#5994FA" />
+                <stop offset="100%" stopColor="#2F6FE0" stopOpacity={0.85} />
               </linearGradient>
             </defs>
             <CartesianGrid
@@ -529,8 +529,8 @@ function EnquiryChart({ data, loading }) {
           >
             <defs>
               <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#FF6B6B" stopOpacity={0.18} />
-                <stop offset="100%" stopColor="#FF6B6B" stopOpacity={0} />
+                <stop offset="0%" stopColor="#5994FA" stopOpacity={0.18} />
+                <stop offset="100%" stopColor="#5994FA" stopOpacity={0} />
               </linearGradient>
             </defs>
             <CartesianGrid
@@ -569,12 +569,12 @@ function EnquiryChart({ data, loading }) {
             <Line
               type="monotone"
               dataKey="count"
-              stroke="#FF6B6B"
+              stroke="#5994FA"
               strokeWidth={2.5}
-              dot={{ fill: "#FF6B6B", strokeWidth: 0, r: 4 }}
+              dot={{ fill: "#5994FA", strokeWidth: 0, r: 4 }}
               activeDot={{
                 r: 6,
-                fill: "#FF6B6B",
+                fill: "#5994FA",
                 stroke: "white",
                 strokeWidth: 2,
               }}
@@ -608,7 +608,7 @@ function EnquiryChart({ data, loading }) {
                 fontFamily: "Plus Jakarta Sans, sans-serif",
                 fontWeight: 700,
                 fontSize: "0.875rem",
-                color: d.count === peak.count ? "#FF6B6B" : "#0F172A",
+                color: d.count === peak.count ? "#5994FA" : "#0F172A",
                 margin: "0 0 0.2rem",
               }}
             >
@@ -680,7 +680,7 @@ export default function DashboardClient({
                 marginBottom: "0.25rem",
               }}
             >
-              <LayoutDashboard size={20} style={{ color: "#FF6B6B" }} />
+              <LayoutDashboard size={20} style={{ color: "#5994FA" }} />
               <h1
                 style={{
                   fontFamily: "Plus Jakarta Sans, sans-serif",
@@ -765,7 +765,7 @@ export default function DashboardClient({
             label="Land Listings"
             value={counts.lands}
             icon={MapPin}
-            color="#FF6B6B"
+            color="#5994FA"
             href="/admin/lands"
             loading={loading}
           />
@@ -773,7 +773,7 @@ export default function DashboardClient({
             label="House Listings"
             value={counts.houses}
             icon={Home}
-            color="#38BDF8"
+            color="#5994FA"
             href="/admin/houses"
             loading={loading}
           />
@@ -849,7 +849,7 @@ export default function DashboardClient({
               <div
                 style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
               >
-                <MessageSquare size={16} style={{ color: "#FF6B6B" }} />
+                <MessageSquare size={16} style={{ color: "#5994FA" }} />
                 <h2
                   style={{
                     fontFamily: "Plus Jakarta Sans, sans-serif",
@@ -866,7 +866,7 @@ export default function DashboardClient({
                 href="/admin/enquiries"
                 style={{
                   fontSize: "0.8125rem",
-                  color: "#FF6B6B",
+                  color: "#5994FA",
                   fontFamily: "Plus Jakarta Sans, sans-serif",
                   fontWeight: 600,
                   textDecoration: "none",
@@ -942,7 +942,7 @@ export default function DashboardClient({
                 marginBottom: "1.25rem",
               }}
             >
-              <Plus size={16} style={{ color: "#FF6B6B" }} />
+              <Plus size={16} style={{ color: "#5994FA" }} />
               <h2
                 style={{
                   fontFamily: "Plus Jakarta Sans, sans-serif",
@@ -967,14 +967,14 @@ export default function DashboardClient({
                 description="Create a new plot or estate"
                 icon={MapPin}
                 href="/admin/lands"
-                color="#FF6B6B"
+                color="#5994FA"
               />
               <QuickAction
                 label="Add House Listing"
                 description="Add a property for sale/rent"
                 icon={Home}
                 href="/admin/houses"
-                color="#38BDF8"
+                color="#5994FA"
               />
               <QuickAction
                 label="Write Blog Post"
@@ -1013,7 +1013,7 @@ export default function DashboardClient({
                 marginBottom: "1.25rem",
               }}
             >
-              <Eye size={16} style={{ color: "#FF6B6B" }} />
+              <Eye size={16} style={{ color: "#5994FA" }} />
               <h2
                 style={{
                   fontFamily: "Plus Jakarta Sans, sans-serif",
@@ -1052,7 +1052,7 @@ export default function DashboardClient({
                       width: "1.5rem",
                       height: "1.5rem",
                       borderRadius: "50%",
-                      background: i === 0 ? "#FF6B6B" : "#F1F5F9",
+                      background: i === 0 ? "#5994FA" : "#F1F5F9",
                       color: i === 0 ? "white" : "#94A3B8",
                       fontSize: "0.7rem",
                       fontWeight: 700,

@@ -125,7 +125,7 @@ function ImageUpload({ label, value, onChange, folder = "lands" }) {
           transition: "all 150ms",
         }}
         onMouseEnter={(e) => {
-          if (!url) e.currentTarget.style.borderColor = "#ff6b6b";
+          if (!url) e.currentTarget.style.borderColor = "#5994fa";
         }}
         onMouseLeave={(e) => {
           if (!url) e.currentTarget.style.borderColor = "#e2e8f0";
@@ -143,7 +143,7 @@ function ImageUpload({ label, value, onChange, folder = "lands" }) {
             <Loader2
               size={26}
               style={{
-                color: "#ff6b6b",
+                color: "#5994fa",
                 animation: "spin 1s linear infinite",
                 display: "block",
                 margin: "0 auto 0.5rem",
@@ -341,7 +341,7 @@ function GalleryUpload({ value = [], onChange, folder = "lands" }) {
             background: "#f8fafc",
             gap: "0.25rem",
           }}
-          onMouseEnter={(e) => (e.currentTarget.style.borderColor = "#ff6b6b")}
+          onMouseEnter={(e) => (e.currentTarget.style.borderColor = "#5994fa")}
           onMouseLeave={(e) => (e.currentTarget.style.borderColor = "#e2e8f0")}
         >
           <input
@@ -355,7 +355,7 @@ function GalleryUpload({ value = [], onChange, folder = "lands" }) {
           {uploading ? (
             <Loader2
               size={20}
-              style={{ color: "#ff6b6b", animation: "spin 1s linear infinite" }}
+              style={{ color: "#5994fa", animation: "spin 1s linear infinite" }}
             />
           ) : (
             <>
@@ -793,7 +793,7 @@ function LandForm({ initial, onSave, onClose, saving }) {
             width: "44px",
             height: "24px",
             borderRadius: "9999px",
-            background: form.featured ? "#ff6b6b" : "#e2e8f0",
+            background: form.featured ? "#5994fa" : "#e2e8f0",
             position: "relative",
             cursor: "pointer",
             transition: "background 0.2s",
@@ -980,7 +980,7 @@ export default function AdminLandsPage() {
                 marginBottom: "0.25rem",
               }}
             >
-              <MapPin size={20} color="#ff6b6b" />
+              <MapPin size={20} color="#5994fa" />
               <h1
                 style={{
                   fontWeight: 800,
@@ -1092,7 +1092,7 @@ export default function AdminLandsPage() {
               <Loader2
                 size={30}
                 style={{
-                  color: "#ff6b6b",
+                  color: "#5994fa",
                   animation: "spin 1s linear infinite",
                   display: "block",
                   margin: "0 auto 0.75rem",
@@ -1461,7 +1461,7 @@ const S = {
   row2: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" },
   row3: { display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1rem" },
   btnPrimary: {
-    background: "#ff6b6b",
+    background: "#5994fa",
     color: "#fff",
     border: "none",
     cursor: "pointer",

@@ -227,8 +227,8 @@ export function FeaturedLands({ lands = [] }) {
                     display: "inline-flex",
                     alignItems: "center",
                     gap: "0.35rem",
-                    background: "rgba(255,107,107,0.15)",
-                    border: "1px solid rgba(255,107,107,0.3)",
+                    background: "rgba(89, 148, 250,0.15)",
+                    border: "1px solid rgba(89, 148, 250,0.3)",
                     borderRadius: "var(--radius-full)",
                     padding: "0.25rem 0.75rem",
                     marginBottom: "0.75rem",
@@ -610,14 +610,14 @@ export function FeaturedHouses({ houses = [] }) {
 
   const tagColors = {
     "New Listing": {
-      bg: "rgba(56,189,248,0.15)",
+      bg: "rgba(89, 148, 250,0.15)",
       color: "var(--color-accent)",
-      border: "rgba(56,189,248,0.3)",
+      border: "rgba(89, 148, 250,0.3)",
     },
     "Hot Offer": {
-      bg: "rgba(255,107,107,0.15)",
+      bg: "rgba(89, 148, 250,0.15)",
       color: "var(--color-primary)",
-      border: "rgba(255,107,107,0.3)",
+      border: "rgba(89, 148, 250,0.3)",
     },
     Featured: {
       bg: "rgba(245,158,11,0.15)",
@@ -831,7 +831,7 @@ export function FeaturedHouses({ houses = [] }) {
                 inset: 0,
                 opacity: 0.06,
                 backgroundImage:
-                  "radial-gradient(rgba(255,107,107,0.8) 1px, transparent 1px)",
+                  "radial-gradient(rgba(89, 148, 250,0.8) 1px, transparent 1px)",
                 backgroundSize: "22px 22px",
               }}
             />
@@ -921,8 +921,8 @@ export function FeaturedHouses({ houses = [] }) {
                   alignItems: "center",
                   gap: "0.35rem",
                   marginBottom: "0.75rem",
-                  background: "rgba(255,107,107,0.15)",
-                  border: "1px solid rgba(255,107,107,0.3)",
+                  background: "rgba(89, 148, 250,0.15)",
+                  border: "1px solid rgba(89, 148, 250,0.3)",
                   borderRadius: "var(--radius-full)",
                   padding: "0.25rem 0.75rem",
                 }}
@@ -1093,10 +1093,10 @@ export function FeaturedHouses({ houses = [] }) {
                   gap: "1rem",
                   padding: "1rem 1.125rem",
                   borderRadius: "var(--radius-lg)",
-                  border: `1px solid ${activeIdx === idx ? "rgba(255,107,107,0.4)" : "rgba(255,255,255,0.07)"}`,
+                  border: `1px solid ${activeIdx === idx ? "rgba(89, 148, 250,0.4)" : "rgba(255,255,255,0.07)"}`,
                   background:
                     activeIdx === idx
-                      ? "rgba(255,107,107,0.08)"
+                      ? "rgba(89, 148, 250,0.08)"
                       : "rgba(255,255,255,0.03)",
                   cursor: "pointer",
                   textAlign: "left",
@@ -1288,7 +1288,7 @@ export function FeaturedHouses({ houses = [] }) {
               style={{
                 marginTop: "0.5rem",
                 justifyContent: "center",
-                borderColor: "rgba(255,107,107,0.4)",
+                borderColor: "rgba(89, 148, 250,0.4)",
                 color: "var(--color-primary)",
               }}
             >
@@ -1415,7 +1415,7 @@ export function PopularAreas({ areas = [] }) {
                   className="absolute inset-0"
                   style={{
                     background:
-                      "linear-gradient(to top, rgba(28,28,46,0.92) 0%, rgba(28,28,46,0.3) 60%, transparent 100%)",
+                      "linear-gradient(to top, rgba(13, 22, 66,0.92) 0%, rgba(13, 22, 66,0.3) 60%, transparent 100%)",
                   }}
                 />
 

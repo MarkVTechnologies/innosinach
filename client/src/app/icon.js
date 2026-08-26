@@ -8,7 +8,7 @@ export default function Icon() {
     (
       <div
         style={{
-          background: "#1a0a2e",
+          background: "#17256b",
           width: "100%",
           height: "100%",
           display: "flex",
@@ -27,7 +27,7 @@ export default function Icon() {
             letterSpacing: "-1px",
           }}
         >
-          M
+          I
         </span>
       </div>
     ),

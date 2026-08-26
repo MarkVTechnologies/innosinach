@@ -75,7 +75,7 @@ export default function LoginForm() {
         minHeight: "100vh",
         display: "flex",
         background:
-          "linear-gradient(135deg, #060B14 0%, #0F172A 60%, #1E2D4A 100%)",
+          "linear-gradient(135deg, #080D2E 0%, #0F172A 60%, #1F3086 100%)",
         position: "relative",
         overflow: "hidden",
         fontFamily: "Inter, sans-serif",
@@ -90,7 +90,7 @@ export default function LoginForm() {
           height: "600px",
           borderRadius: "50%",
           background:
-            "radial-gradient(circle, color-mix(in srgb, var(--color-primary, #a43795) 8%, transparent) 0%, transparent 65%)",
+            "radial-gradient(circle, color-mix(in srgb, var(--color-primary, #5994fa) 8%, transparent) 0%, transparent 65%)",
           pointerEvents: "none",
         }}
       />
@@ -131,7 +131,7 @@ export default function LoginForm() {
               width: "2.75rem",
               height: "2.75rem",
               borderRadius: "0.75rem",
-              background: "var(--color-primary, #a43795)",
+              background: "var(--color-primary, #5994fa)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -179,7 +179,7 @@ export default function LoginForm() {
         >
           Manage your
           <br />
-          <span style={{ color: "var(--color-primary, #a43795)" }}>real estate</span>
+          <span style={{ color: "var(--color-primary, #5994fa)" }}>real estate</span>
           <br />
           empire.
         </h1>
@@ -238,7 +238,7 @@ export default function LoginForm() {
                 width: "2.25rem",
                 height: "2.25rem",
                 borderRadius: "0.625rem",
-                background: "var(--color-primary, #a43795)",
+                background: "var(--color-primary, #5994fa)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -352,7 +352,7 @@ export default function LoginForm() {
                   boxSizing: "border-box",
                 }}
                 onFocus={(e) => {
-                  e.target.style.borderColor = "var(--color-primary, #a43795)";
+                  e.target.style.borderColor = "var(--color-primary, #5994fa)";
                   e.target.style.background = "rgba(255,255,255,0.08)";
                 }}
                 onBlur={(e) => {
@@ -396,7 +396,7 @@ export default function LoginForm() {
                     boxSizing: "border-box",
                   }}
                   onFocus={(e) => {
-                    e.target.style.borderColor = "var(--color-primary, #a43795)";
+                    e.target.style.borderColor = "var(--color-primary, #5994fa)";
                     e.target.style.background = "rgba(255,255,255,0.08)";
                   }}
                   onBlur={(e) => {
@@ -431,8 +431,8 @@ export default function LoginForm() {
                 borderRadius: "0.75rem",
                 border: "none",
                 background: submitting
-                  ? "color-mix(in srgb, var(--color-primary, #a43795) 50%, transparent)"
-                  : "var(--color-primary, #a43795)",
+                  ? "color-mix(in srgb, var(--color-primary, #5994fa) 50%, transparent)"
+                  : "var(--color-primary, #5994fa)",
                 color: "#ffffff",
                 fontFamily: "Plus Jakarta Sans, sans-serif",
                 fontWeight: 700,
@@ -474,7 +474,7 @@ export default function LoginForm() {
             First time?{" "}
             <a
               href="/admin/setup"
-              style={{ color: "var(--color-primary, #a43795)", textDecoration: "none", opacity: 0.85 }}
+              style={{ color: "var(--color-primary, #5994fa)", textDecoration: "none", opacity: 0.85 }}
             >
               Create your admin account &rarr;
             </a>

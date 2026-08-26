@@ -76,7 +76,7 @@ export default function AdminSidebar({ newEnquiries = 0 }) {
         width: sidebarWidth,
         minHeight: "100%",
         background:
-          "linear-gradient(180deg, var(--color-secondary-dark, #060B14) 0%, var(--color-secondary, #0F172A) 100%)",
+          "linear-gradient(180deg, var(--color-secondary-dark, #080D2E) 0%, var(--color-secondary, #0F172A) 100%)",
         borderRight: "1px solid rgba(255,255,255,0.06)",
         display: "flex",
         flexDirection: "column",
@@ -105,7 +105,7 @@ export default function AdminSidebar({ newEnquiries = 0 }) {
                 width: "2rem",
                 height: "2rem",
                 borderRadius: "0.5rem",
-                background: "var(--color-primary, #FF6B6B)",
+                background: "var(--color-primary, #5994FA)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -146,7 +146,7 @@ export default function AdminSidebar({ newEnquiries = 0 }) {
               width: "2rem",
               height: "2rem",
               borderRadius: "0.5rem",
-              background: "var(--color-primary, #FF6B6B)",
+              background: "var(--color-primary, #5994FA)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -219,9 +219,9 @@ export default function AdminSidebar({ newEnquiries = 0 }) {
                 textDecoration: "none",
                 // Active: solid primary bg with WHITE text — never a colour clash
                 background: active
-                  ? "var(--color-primary, #FF6B6B)"
+                  ? "var(--color-primary, #5994FA)"
                   : "transparent",
-                border: `1px solid ${active ? "var(--color-primary, #FF6B6B)" : "transparent"}`,
+                border: `1px solid ${active ? "var(--color-primary, #5994FA)" : "transparent"}`,
                 color: active ? "white" : "rgba(255,255,255,0.55)",
                 transition: "all 150ms ease",
                 position: "relative",
@@ -262,8 +262,8 @@ export default function AdminSidebar({ newEnquiries = 0 }) {
                     // On active (primary bg): invert to white bg + primary text
                     background: active
                       ? "white"
-                      : "var(--color-primary, #FF6B6B)",
-                    color: active ? "var(--color-primary, #FF6B6B)" : "white",
+                      : "var(--color-primary, #5994FA)",
+                    color: active ? "var(--color-primary, #5994FA)" : "white",
                     fontSize: "0.6rem",
                     fontWeight: 700,
                     width: "1.1rem",
@@ -339,7 +339,7 @@ export default function AdminSidebar({ newEnquiries = 0 }) {
                 width: "2rem",
                 height: "2rem",
                 borderRadius: "50%",
-                background: "var(--color-primary, #FF6B6B)",
+                background: "var(--color-primary, #5994FA)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -496,7 +496,7 @@ export default function AdminSidebar({ newEnquiries = 0 }) {
                 position: "absolute",
                 top: "1rem",
                 right: "-2.5rem",
-                background: "var(--color-secondary-mid, #2e1352)",
+                background: "var(--color-secondary-mid, #1f3086)",
                 border: "1px solid rgba(255,255,255,0.12)",
                 borderLeft: "none",
                 borderRadius: "0 0.5rem 0.5rem 0",

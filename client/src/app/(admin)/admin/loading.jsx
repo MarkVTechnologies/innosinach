@@ -18,7 +18,7 @@ export default function AdminLoading() {
           width: "44px",
           height: "44px",
           borderRadius: "0.75rem",
-          background: "var(--color-primary, #a43795)",
+          background: "var(--color-primary, #5994fa)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",

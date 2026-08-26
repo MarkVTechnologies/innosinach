@@ -115,7 +115,7 @@ export default function HouseCard({ house, whatsapp }) {
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(to top, rgba(28,28,46,0.85) 0%, transparent 55%)",
+                "linear-gradient(to top, rgba(13, 22, 66,0.85) 0%, transparent 55%)",
             }}
           />
 
